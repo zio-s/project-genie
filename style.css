@@ -1,0 +1,95 @@
+*{
+    margin: 0; padding: 0; list-style: none;  font-size: 0; line-height: 1;
+    /* 폰트 */
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard Variable", Pretendard, Roboto, "Noto Sans KR", "Segoe UI", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif, Poppins;
+}
+
+html,body{
+    height: 200vh;
+    
+}
+/* 폰트 */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
+/* 폰트 */
+
+
+
+.fullpage-wrapper{
+    width: 100%;
+    height: 100%;
+    background: #1e1e1e;
+    position: fixed;
+}
+
+.intro{
+    box-sizing: border-box;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    
+}
+.side-box{
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+}
+.side-box span{
+    position: absolute;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: Poppins;
+}
+
+.side-box span:nth-child(1){
+    top: 0; left: 0;
+}
+.side-box span:nth-child(2){
+    top: 0; right: 0;
+}
+.side-box span:nth-child(3){
+    bottom: 0; left: 0;
+}
+.side-box span:nth-child(4){
+    bottom: 0; right: 0;
+}
+
+.big-logo, .small-logo{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    
+}
+
+.big-logo{
+    background-size: contain;
+    z-index: 5;
+    background-image: url(images/genie-big.png);
+    transform: translate(-50%,-50%)  rotate(400deg) scale(2.7);
+}
+.small-logo{
+    
+    z-index: 1;
+    transform: translate(-50%,-50%) scale(2.5);
+    background-image: url(images/genie33.png);
+}
+
+
+.visual-text{
+    width: 100%;
+    height: 100%;
+}
+.fullpage span{
+    font-size: 30px;
+    color: #fff;
+}
