@@ -79,11 +79,11 @@ body {
 .big-logo {
   background-size: contain;
   z-index: 5;
-  background-image: url(../images/genie-big.png);
+  background-image: url(/images/genie-big.png);
   transform: translate(-50%, -50%) rotate(400deg) scale(2.7);
 }
 .small-logo {
   z-index: 1;
   transform: translate(-50%, -50%) scale(2.5);
-  background-image: url(../images/genie33.png);
+  background-image: url(/images/genie33.png);
 }
