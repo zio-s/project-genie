@@ -1,8 +1,4 @@
-// use a script tag or an external JS file
-// gsap intro //
-//GSAP ScrollTrigger 플러그인 활성화
 // gsap.registerPlugin(ScrollTrigger);
-
 // gsap.to(".container-intro", {
 //   scrollTrigger: {
 //     trigger: ".container-intro",
@@ -49,9 +45,8 @@
 
 
 
-
-
 // document.addEventListener("DOMContentLoaded", () => {
+
 //   // fullpage.js 초기화
 //   new fullpage("#fullpage", {
 //     autoScrolling: true,
@@ -84,7 +79,6 @@
 
 ////////////////////////////////////////////////////////////////////// test
 
-
 document.addEventListener("DOMContentLoaded", () => {
   // Initialize GSAP ScrollTrigger
   gsap.registerPlugin(ScrollTrigger);
@@ -109,4 +103,5 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     },
   });
+
 });

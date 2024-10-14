@@ -2,16 +2,14 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  font-size: 0;
   line-height: 1;
-  /* 폰트 */
-  font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard Variable", Pretendard, Roboto, "Noto Sans KR", "Segoe UI", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif, Poppins;
 }
 
 html,
 body {
   height: 100%;
-  overflow: hidden; /* Prevent double scrollbars */
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard Variable", Pretendard, Roboto, "Noto Sans KR", "Segoe UI", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif, Poppins;
 }
 /* 폰트 */
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
@@ -97,21 +95,57 @@ body {
 /* section */
 #fullpage .section {
   text-align: center;
-  font-size: 2em;
+  font-size: 2rem;
   color: white;
   z-index: 5;
 }
-.section{
+.section {
+  height: 100vh; /* 모든 섹션이 전체 화면 높이를 유지 */
   display: flex;
-  align-items: center;
-  justify-content: center; /* Center contents */
+  /* align-items: center; */
+  /* justify-content: center;  */
 }
 #fullpage .section:nth-child(1) {
-  background-color: #e74c3c;
+  background-color: #1e1e1e;
 }
 
+#fullpage .content {
+  width: 100%; /* 콘텐츠 폭 조절 */
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+}
+.content .inner-txt {
+  width: 50%;
+  height: 100%;
+  font-family: "Pretendard";
+}
+
+
+#fullpage .content p.active {
+  font-size: 7.8rem; /* 텍스트 크기 조절 */
+  line-height: 1.5;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+.inner-txt .top_txt {
+  width: 80%;
+  position: absolute;
+  top: 15%;
+  left: 0;
+  text-align: left;
+  color: #0095FF;
+  
+}
+.inner-txt .bottom_txt {
+  position: absolute;
+  width: 80%;
+  bottom: 0;
+  right: 0;
+  text-align: right;
+}
 #fullpage .section:nth-child(2) {
-  background-color: #3498db;
+  background-color: #1e1e1e;
 }
 
 #fullpage .section:nth-child(3) {
