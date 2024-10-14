@@ -10,18 +10,22 @@
 
 html,
 body {
-  width: 100%;
   height: 100%;
-  overflow: hidden;
+  overflow: hidden; /* Prevent double scrollbars */
 }
 /* 폰트 */
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
 
 /* 폰트 */
+#fullpage {
+  height: 100vh; /* Ensure full height for each section */
+}
 .wrap {
   width: 100%;
-  height: 200vh;
+  height: 100vh;
   background: #1e1e1e;
+  position: relative;
+  z-index: -1;
 }
 .container-intro {
   height: 100vh;
@@ -29,12 +33,10 @@ body {
   z-index: 2;
 }
 .intro {
-  box-sizing: border-box;
-  padding: 20px;
-  width: 100%;
-  height: 100%;
-  position: relative;
-  overflow: hidden;
+  /* position: relative; */
+  /* height: 100%; */
+  /* width: 100%; */
+  background: #1e1e1e;
 }
 .side-box {
   position: relative;
@@ -97,8 +99,13 @@ body {
   text-align: center;
   font-size: 2em;
   color: white;
+  z-index: 5;
 }
-
+.section{
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center contents */
+}
 #fullpage .section:nth-child(1) {
   background-color: #e74c3c;
 }
