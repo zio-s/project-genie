@@ -6,6 +6,10 @@ document.addEventListener("DOMContentLoaded", () => {
   new fullpage("#fullpage", {
     autoScrolling: true,
     navigation: true,
+    // scrollingSpeed: 700,
+    easingcss3: 'cubic-bezier(0.76, 0, 0.24, 1)',
+    scrollingSpeed: 1250,
+    touchSensitivity: .01,
     afterLoad: (origin, destination) => {
       if (destination.index === 0) {
         ScrollTrigger.refresh(); // 첫 번째 섹션 복귀 시 갱신
@@ -71,6 +75,19 @@ document.addEventListener("DOMContentLoaded", () => {
         // onUpdate: (self) => console.log(`Small Logo Progress: ${self.progress}`),
       });
     }
+  //   // 스무스 스크롤
+  //   function scrollToTarget() {
+  //     const targetElement = document.querySelector(".fp-overflow");
+  //     if (targetElement) {
+  //         targetElement.scrollTo({
+  //             left: 0,
+  //             top: document.body.offsetHeight * 2 - 1,
+  //             behavior: "smooth"
+  //         });
+  //     }
+  // }
+  // // 사용 예시: 버튼 클릭 시 호출
+  // document.querySelector("#scrollButton").addEventListener("click", scrollToTarget);
 
     window.addEventListener("resize", () => {
       const introSection = document.querySelector(".intro-sec");
