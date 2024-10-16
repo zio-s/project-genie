@@ -47,13 +47,13 @@ document.addEventListener("DOMContentLoaded", () => {
         scroller: introSection.querySelector(".fp-overflow") || introSection,
         start: "top top",
         // end: `+=${heightBoxHeight}`,
-        end: "+=100%",
+        end: "bottom -100%",
         scrub: 1,
         // markers: true,
         animation: gsap.fromTo(
           bigLogo,
           { rotate: -400, scale: 2.5, ease: "linear" },
-          { rotate: 0, scale: 1, duration: 2, ease: "linear" }
+          { rotate: 0, scale: 1, duration: 3, ease: "linear" }
         ),
         // onUpdate: (self) => console.log(`Big Logo Progress: ${self.progress}`),
       });
@@ -64,13 +64,13 @@ document.addEventListener("DOMContentLoaded", () => {
         scroller: introSection.querySelector(".fp-overflow") || introSection,
         start: "top top",
         // end: `+=${heightBoxHeight}`,
-        end: "+=100%",
+        end: "bottom -100%",
         scrub: 1,
         // markers: true,
         animation: gsap.fromTo(
           smallLogo,
           { scale: 2.5 },
-          { scale: 1, duration: 1, ease: "linear" }
+          { scale: 1, duration: 3, ease: "linear" }
         ),
         // onUpdate: (self) => console.log(`Small Logo Progress: ${self.progress}`),
       });
