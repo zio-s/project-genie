@@ -31,7 +31,9 @@ body {
   z-index: 2;
 }
 .intro {
-  /* position: relative; */
+  height: 200vh;
+  position: relative;
+  z-index: 5;
   /* height: 100%; */
   /* width: 100%; */
   background: #1e1e1e;
@@ -93,6 +95,9 @@ body {
 }
 
 /* section */
+#fullpage{
+  height: 100vh;
+}
 #fullpage .section {
   text-align: center;
   font-size: 2rem;
@@ -100,10 +105,12 @@ body {
   z-index: 5;
 }
 .section {
-  height: 100vh; /* 모든 섹션이 전체 화면 높이를 유지 */
+  height: 100vh;
   display: flex;
-  /* align-items: center; */
-  /* justify-content: center;  */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #1e1e1e;
 }
 #fullpage .section:nth-child(1) {
   background-color: #1e1e1e;

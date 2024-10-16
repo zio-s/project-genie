@@ -2,8 +2,8 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  font-size: 0;
   line-height: 1;
+  box-sizing: border-box;
   /* 폰트 */
   font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard Variable", Pretendard, Roboto, "Noto Sans KR", "Segoe UI", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif, Poppins;
 }
@@ -11,34 +11,51 @@
 html,
 body {
   width: 100%;
-  height: 100%;
+  height: 300vh;
   overflow: hidden;
 }
 /* 폰트 */
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
 
 /* 폰트 */
-.wrap {
-  width: 100%;
-  height: 200vh;
-  background: #1e1e1e;
-}
-.container-intro {
-  height: 100vh;
-  background: #1e1e1e;
-  z-index: 2;
-}
-.intro {
-  box-sizing: border-box;
-  padding: 20px;
+#fullpage {
   width: 100%;
   height: 100%;
-  position: relative;
-  overflow: hidden;
+  /* overflow: auto; */
 }
-.side-box {
+
+#fp-nav ul li a span, .fp-slidesNav ul li a span{
+  background: #fff;
+}
+
+.fp-overflow {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  /* justify-content: flex-start; */
+  max-height: 100vh;
+}
+.intro-sec {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  background: #1e1e1e;
+  overflow: hidden !important;
+  z-index: 10;
+}
+.height_box {
   position: relative;
-  z-index: 2;
+  width: 100%;
+  /* cursor: none; */
+  height: 300vh !important;
+  overflow: hidden !important;
+}
+
+.side-box {
+  position: fixed;
   width: 100%;
   height: 100%;
 }
@@ -68,45 +85,73 @@ body {
   right: 0;
 }
 
-.big-logo,
-.small-logo {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 50%;
-  left: 50%;
+.big-logo {
+  background-image: url(../images/genie-big.png);
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: contain;
-}
-
-.big-logo {
-  background-size: contain;
-  z-index: 5;
-  background-image: url(../images/genie-big.png);
-  transform: translate(-50%, -50%) rotate(400deg) scale(2.7);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  transform-origin: center !important;
+  z-index: 1;
+  user-select: none;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* cursor: none; */
 }
 .small-logo {
-  z-index: 1;
-  transform: translate(-50%, -50%) scale(2.5);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
   background-image: url(../images/genie33.png);
+}
+
+.container_txt {
+  width: 100%;
+  height: 100%;
+}
+.content {
+  width: 100%;
+  height: 100%;
 }
 
 /* section */
 #fullpage .section {
-  text-align: center;
-  font-size: 2em;
   color: white;
+  height: 100vh;
+  position: relative;
+  z-index: 1;
 }
 
 #fullpage .section:nth-child(1) {
-  background-color: #e74c3c;
+  background-color: #1e1e1e;
+  
 }
 
 #fullpage .section:nth-child(2) {
   background-color: #3498db;
+  
+  /* display: none; */
 }
 
 #fullpage .section:nth-child(3) {
   background-color: #2ecc71;
+  
+  /* display: none; */
+}
+#fullpage .section:nth-child(4) {
+  /* display: none; */
 }

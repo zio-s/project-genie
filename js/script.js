@@ -45,63 +45,70 @@
 
 
 
-// document.addEventListener("DOMContentLoaded", () => {
-
-//   // fullpage.js 초기화
-//   new fullpage("#fullpage", {
-//     autoScrolling: true,
-//     navigation: true,
-//     licenseKey: "OPEN-SOURCE-GPLV3-LICENSE",
-//     afterLoad: (origin, destination) => {
-//       // intro 섹션에 진입할 때 애니메이션 실행
-//       if (destination.index === 0) {
-//         introAnimation(); // intro 애니메이션 함수 호출
-//       }
-//     },
-//   });
-
-//   // GSAP intro 애니메이션 함수
-//   function introAnimation() {
-//     gsap.to(".big-logo", {
-//       scale: 1,
-//       rotation: 360,
-//       ease: "power1.out",
-//       duration: 2, // 애니메이션 시간
-//     });
-
-//     gsap.to(".small-logo", {
-//       scale: 1,
-//       ease: "power2.out",
-//       duration: 2,
-//     });
-//   }
-// });
-
-////////////////////////////////////////////////////////////////////// test
-
 document.addEventListener("DOMContentLoaded", () => {
-  // Initialize GSAP ScrollTrigger
-  gsap.registerPlugin(ScrollTrigger);
 
-  // Initialize Fullpage.js
-  new fullpage('#fullpage', {
+  // fullpage.js 초기화
+  new fullpage("#fullpage", {
     autoScrolling: true,
     navigation: true,
-    licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
-    onLeave: (origin, destination, direction) => {
-      // When leaving intro, trigger Fullpage effect
-      if (origin.index === 0 && direction === 'down') {
-        // Optional: Call any cleanup or additional animations here if needed
-      }
-    },
+    scrollOverflow: true,
+    // licenseKey: "OPEN-SOURCE-GPLV3-LICENSE",
     afterLoad: (origin, destination) => {
-      // Handle animations for the intro section
-      if (destination.index === 0) { // When entering intro
-        // Start GSAP animations
-        gsap.fromTo(".big-logo", { scale: 2.7, rotation: 0 }, { scale: 1, rotation: 360, duration: 2, ease: "power1.out" });
-        gsap.fromTo(".small-logo", { scale: 2.5 }, { scale: 1, duration: 2, ease: "power2.out" });
+      // intro 섹션에 진입할 때 애니메이션 실행
+      if (destination.index === 0) {
+        introAnimation(); // intro 애니메이션 함수 호출
       }
     },
   });
 
+  // GSAP intro 애니메이션 함수
+  function introAnimation() {
+    gsap.to(".big-logo", {
+      scale: 1,
+      rotation: 360,
+      ease: "power1.out",
+      duration: 2, // 애니메이션 시간
+    });
+
+    gsap.to(".small-logo", {
+      scale: 1,
+      ease: "power2.out",
+      duration: 2,
+    });
+  }
+
+
+
+
+
+  
 });
+
+////////////////////////////////////////////////////////////////////// test
+
+// document.addEventListener("DOMContentLoaded", () => {
+//   // Initialize GSAP ScrollTrigger
+//   gsap.registerPlugin(ScrollTrigger);
+
+//   // Initialize Fullpage.js
+//   new fullpage('#fullpage', {
+//     autoScrolling: true,
+//     navigation: true,
+//     licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
+//     onLeave: (origin, destination, direction) => {
+//       // When leaving intro, trigger Fullpage effect
+//       if (origin.index === 0 && direction === 'down') {
+//         // Optional: Call any cleanup or additional animations here if needed
+//       }
+//     },
+//     afterLoad: (origin, destination) => {
+//       // Handle animations for the intro section
+//       if (destination.index === 0) { // When entering intro
+//         // Start GSAP animations
+//         gsap.fromTo(".big-logo", { scale: 2.7, rotation: 0 }, { scale: 1, rotation: 360, duration: 2, ease: "power1.out" });
+//         gsap.fromTo(".small-logo", { scale: 2.5 }, { scale: 1, duration: 2, ease: "power2.out" });
+//       }
+//     },
+//   });
+
+// });
