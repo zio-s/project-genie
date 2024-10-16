@@ -28,10 +28,10 @@ document.addEventListener("DOMContentLoaded", () => {
       trigger: introSection,
       start: "top top",
       end: "bottom top",
-      pin: true,
+      // pin: true,
       scrub: 1,
       onLeaveBack: () => ScrollTrigger.refresh(), // 뒤로 돌아올 때 갱신
-      markers: true, // 디버깅용
+      // markers: true, // 디버깅용
     });
 
 
