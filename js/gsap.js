@@ -22,8 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
   
     const bigLogo = document.querySelector(".big-logo");
     const smallLogo = document.querySelector(".small-logo");
-    const heightBox = document.querySelector(".height_box");
-    const heightBoxHeight = heightBox ? heightBox.offsetHeight : 0; 
+    // const heightBox = document.querySelector(".height_box");
+    // const heightBoxHeight = heightBox ? heightBox.offsetHeight : 0; 
     
 
     // intro-sec을 스크롤 시 고정하고 이후 해제
