@@ -144,6 +144,8 @@ body {
   background-color: #1e1e1e;
 }
 
+/* sec01 */
+
 .sec-01 {
   width: 100%;
   height: 100%;
@@ -178,4 +180,85 @@ body {
   height: 100%;
   position: absolute;
   background: url(../images/blue-one.svg) no-repeat left bottom;
+}
+
+/* sec-01 end */
+
+/* sec-02 */
+.album-container {
+  display: flex;
+  /* max-width: 1200px; */
+  width: 100%;
+  gap: 2rem;
+  padding: 2rem;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+.album-bg{
+  top: 0; left: 0; right: 0; bottom: 0;
+  visibility: hidden;
+  position: absolute;
+  background: url(../images/music_big_bg.svg) no-repeat center/cover;
+}
+.album-info {
+  flex: 1;
+}
+
+.album-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.album-desc {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.album-list-wrapper {
+  flex: 2;
+  overflow-y: auto; /* 세로 스크롤 임시 활성화 없앨거임 */
+  height: 80vh;
+}
+
+.album-list {
+  display: grid;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.album-item {
+  width: 350px;
+  height: 600px;
+  background-color: #333;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s;
+}
+
+/* 지그재그 효과 */
+.album-item:nth-child(odd) {
+  transform: translateX(-60%); /* 홀수 아이템 왼쪽 이동 */
+}
+.album-item:nth-child(even) {
+  transform: translateX(60%); /* 짝수 아이템 오른쪽 이동 */
+}
+
+
+.album-cover {
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+}
+
+.album-name {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+.artist-name {
+  font-size: 1rem;
+  color: #aaa;
+  text-align: center;
 }
