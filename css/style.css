@@ -166,6 +166,9 @@ body {
   font-size: 3vw;
   color: #fff;
 }
+.inner-txt p{
+  line-height: 1;
+}
 .inner-txt.active {
   color: #0095ff;
   font-size: 8vw;
@@ -179,6 +182,7 @@ body {
 .sec-01__item {
   width: 100%;
   height: 100%;
+  
   position: absolute;
   background: url(../images/blue-one.svg) no-repeat left bottom;
 }
