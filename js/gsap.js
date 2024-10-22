@@ -113,6 +113,24 @@ document.addEventListener("DOMContentLoaded", () => {
   ScrollTrigger.refresh();
 
 
+  // 앨범 스크롤 이벤트
+  const albumList = document.querySelector(".album-list"); // 앨범 리스트
+  const wrapper = document.querySelector(".album-container"); // 래퍼
+  
+  ScrollTrigger.create({
+    trigger: albumList, // 스크롤 트리거를 앨범 리스트에 걸기
+    scroller: wrapper,  // 앨범 리스트를 스크롤 할 요소
+    start: "top top",   // 시작 지점
+    end: () => `${albumList.scrollHeight - wrapper.clientHeight}px`, // 스크롤 종료 지점
+    scrub: 4,        // 스크롤에 따라 부드럽게 애니메이션
+    pin: false,         // 고정된 타이틀을 위한 핀 설정 X
+    
+  });
+
+
+
+
+
 
   window.addEventListener("resize", () => {
     const introSection = document.querySelector(".intro-sec");

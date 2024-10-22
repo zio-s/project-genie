@@ -236,27 +236,49 @@ body {
   background: url(../images/blue-cle.svg) no-repeat -10% 100%;
 }
 
-/* .movie-item {
-  width: 100%;
+.movie-item {
   height: 100vh;
-}
-.movie__t {
-  width: 100%;
-  color: #fff;
-  font-size: 2rem;
-}
-.movie__t p {
-  width: 300px;
-  text-align: center;
-  margin: 0 auto;
-  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
 }
 .movie__video {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.video-scale {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover; /* 비디오가 화면에 꽉 차도록 */
+  transform-origin: center;
+  user-select: none;
+  opacity: 1;
+  
+}
+
+.movie__t {
+  position: absolute;
+  top: 25%;
+  color: white;
+  font-size: 2.5rem;
   text-align: center;
-} */
+  z-index: 0;
+}
 /* sec-01 end */
 
-/* sec-02 */
+/* sec-album */
+.sec-album[class=fp-overflow]{
+  height: fit-content;
+}
 .album-container {
   display: flex;
   /* max-width: 1200px; */
@@ -295,7 +317,7 @@ body {
 
 .album-list-wrapper {
   width: 60%;
-  overflow-y: auto; /* 세로 스크롤 임시 활성화 없앨거임 */
+   /* 세로 스크롤 임시 활성화 없앨거임 */
   height: 100vh;
 }
 
@@ -511,41 +533,4 @@ body {
 
 /* test */
 
-.movie-item {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-}
-.movie__video {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-}
-.video-scale {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover; /* 비디오가 화면에 꽉 차도록 */
-  transform-origin: center;
-  user-select: none;
-  opacity: 1;
-  
-}
 
-.movie__t {
-  position: absolute;
-  top: 25%;
-  color: white;
-  font-size: 2.5rem;
-  text-align: center;
-  z-index: 0;
-  
-}
