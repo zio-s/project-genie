@@ -26,6 +26,7 @@ body {
   height: 100%;
   overflow: hidden;
   font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard Variable", Pretendard, Roboto, "Noto Sans KR", "Segoe UI", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif, Poppins;
+  
 }
 /* 폰트 */
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
@@ -235,7 +236,7 @@ body {
   background: url(../images/blue-cle.svg) no-repeat -10% 100%;
 }
 
-.movie-item {
+/* .movie-item {
   width: 100%;
   height: 100vh;
 }
@@ -252,7 +253,7 @@ body {
 }
 .movie__video {
   text-align: center;
-}
+} */
 /* sec-01 end */
 
 /* sec-02 */
@@ -518,20 +519,33 @@ body {
   align-items: center;
   position: relative;
   overflow: hidden;
+  z-index: 1;
 }
-
+.movie__video {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
 .video-scale {
   width: 100%;
   height: 100%;
+  display: block;
   object-fit: cover; /* 비디오가 화면에 꽉 차도록 */
-  transform: scale(0.5); /* 초기 스케일 */
-  opacity: 0; /* 초기 투명도 */
+  transform-origin: center;
+  user-select: none;
+  opacity: 1;
+  
 }
 
 .movie__t {
   position: absolute;
-  top: 10%;
+  top: 25%;
   color: white;
-  font-size: 2rem;
+  font-size: 2.5rem;
   text-align: center;
+  z-index: 0;
+  
 }

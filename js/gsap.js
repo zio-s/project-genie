@@ -75,33 +75,42 @@ document.addEventListener("DOMContentLoaded", () => {
       scrollCompleted = false;
     }
   });
+  // video scroll event
+  const video = document.querySelector(".video-scale"); 
+  const secScroller = document.querySelector(".sec-01 .fp-overflow"); 
+  const sectionVideo = document.querySelector(".movie-item");
 
-  // document.querySelectorAll(".section").forEach((section) => {
-  //   section.addEventListener("click", () => {
-  //     fullpage_api.moveSectionDown();
-  //   });
-  // });
-
-
-  //video scroll event
-  // const video = document.querySelector(".video-scale");
-  // gsap.fromTo(
-  //   video, 
-  //   { scale: 0.5, opacity: 0 },  // 초기 상태 (작게 시작)
-  //   { 
-  //     scale: 1, 
-  //     opacity: 1,  // 스크롤 중 비디오가 점점 나타나도록 설정
-  //     scrollTrigger: {
-  //       trigger: ".movie-item",   // 비디오가 속한 섹션
-  //       start: "top 80%",         // 트리거가 시작되는 지점
-  //       end: "bottom top",        // 트리거가 끝나는 지점
-  //       scrub: 1,                 // 스크롤에 맞춰 애니메이션 진행
-  //       pin: true,                // 비디오가 스크롤 동안 고정됨
-  //     },
-  //     onLeaveBack: () => ScrollTrigger.refresh(),
-  //     ease: "power2.out"           // 부드러운 애니메이션
-  //   }
-  // );
+  // 비디오 초기 상태 설정
+  gsap.set(video, {
+    scale: 0.35,  
+    y: "25%",     
+    borderRadius: 35 
+  });
+  ScrollTrigger.create({
+    trigger: sectionVideo, // 트리거할 요소
+    scroller: secScroller, // 스크롤러로 사용할 요소
+    start: "top 50%",       
+    end: "bottom bottom",   
+    scrub: 4,               
+    markers: true,
+    // 애니메이션 설정
+    animation: gsap.fromTo(
+      video,
+      {
+        scale: 0.35,       
+        y: "25%",          
+        borderRadius: 35   
+      },
+      {
+        y: 0,              
+        scale: 1,          
+        borderRadius: 0,   
+        ease: "cubic-bezier(0.45, 0, 0.55, 1)", // 커스텀 이징
+        duration: 1.5      
+      }
+    ),
+  });
+  ScrollTrigger.refresh();
 
 
 
