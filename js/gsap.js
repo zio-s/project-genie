@@ -76,63 +76,57 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
   // video scroll event
-  const video = document.querySelector(".video-scale"); 
-  const secScroller = document.querySelector(".sec-01 .fp-overflow"); 
+  const video = document.querySelector(".video-scale");
+  const secScroller = document.querySelector(".sec-01 .fp-overflow");
   const sectionVideo = document.querySelector(".movie-item");
 
   // 비디오 초기 상태 설정
   gsap.set(video, {
-    scale: 0.35,  
-    y: "25%",     
-    borderRadius: 35 
+    scale: 0.35,
+    y: "25%",
+    borderRadius: 35,
   });
   ScrollTrigger.create({
     trigger: sectionVideo, // 트리거할 요소
     scroller: secScroller, // 스크롤러로 사용할 요소
-    start: "top 50%",       
-    end: "bottom bottom",   
-    scrub: 4,               
+    start: "top 50%",
+    end: "bottom bottom",
+    scrub: 4,
     markers: true,
     // 애니메이션 설정
     animation: gsap.fromTo(
       video,
       {
-        scale: 0.35,       
-        y: "25%",          
-        borderRadius: 35   
+        scale: 0.35,
+        y: "25%",
+        borderRadius: 35,
       },
       {
-        y: 0,              
-        scale: 1,          
-        borderRadius: 0,   
+        y: 0,
+        scale: 1,
+        borderRadius: 0,
         ease: "cubic-bezier(0.45, 0, 0.55, 1)", // 커스텀 이징
-        duration: 1.5      
+        duration: 1.5,
       }
     ),
   });
   ScrollTrigger.refresh();
 
-
   // 앨범 스크롤 이벤트
-  const albumList = document.querySelector(".album-list"); // 앨범 리스트
-  const wrapper = document.querySelector(".album-container"); // 래퍼
-  
-  ScrollTrigger.create({
-    trigger: albumList, // 스크롤 트리거를 앨범 리스트에 걸기
-    scroller: wrapper,  // 앨범 리스트를 스크롤 할 요소
-    start: "top top",   // 시작 지점
-    end: () => `${albumList.scrollHeight - wrapper.clientHeight}px`, // 스크롤 종료 지점
-    scrub: 4,        // 스크롤에 따라 부드럽게 애니메이션
-    pin: false,         // 고정된 타이틀을 위한 핀 설정 X
-    
-  });
+  // const albumList = document.querySelector(".album-list"); // 앨범 리스트
+  // const wrapper = document.querySelector(".album-container"); // 래퍼
 
+  // ScrollTrigger.create({
+  //   trigger: albumList, // 스크롤 트리거를 앨범 리스트에 걸기
+  //   scroller: wrapper,  // 앨범 리스트를 스크롤 할 요소
+  //   start: "top top",   // 시작 지점
+  //   end: () => `${albumList.scrollHeight - wrapper.clientHeight}px`, // 스크롤 종료 지점
+  //   scrub: 4,        // 스크롤에 따라 부드럽게 애니메이션
+  //   pin: false,         // 고정된 타이틀을 위한 핀 설정 X
 
+  // });
 
-
-
-
-  window.addEventListener("resize", () => {
+    window.addEventListener("resize", () => {
     const introSection = document.querySelector(".intro-sec");
     introSection.style.height = `${window.innerHeight}px`;
   });
