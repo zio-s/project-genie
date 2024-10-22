@@ -173,31 +173,64 @@ body {
   padding-top: 90px;
   /* overflow: hidden; */
   position: relative;
+  
 }
 .cont-t {
   height: 100%;
   display: flex;
   position: relative;
+  justify-content: space-between;
   z-index: 2;
 }
 .inner-txt {
-  width: 100%;
   height: 100%;
   font-family: "Pretendard";
-  /* font-size: 6vw; */
-  font-size: 3vw;
+  font-size: 5rem;
+  transform: scale(1);
   color: #fff;
+}
+.top-t{
+  flex: 1;
 }
 .inner-txt p {
   line-height: 1;
+  transition: .5s;
 }
 .inner-txt.active {
   color: #0095ff;
-  font-size: 8vw;
 }
+.inner-txt .top_txt{
+  transform-origin: top left;
+  transform: scale(1);
+  
+  
+}
+.inner-txt .bottom_txt{
+  transform-origin: bottom right;
+  transform: scale(1);
+}
+/* hover 애니메이션  */
+.inner-txt.active .top_txt,
+.inner-txt.active .bottom_txt{
+  animation: scale 1s cubic-bezier(.65,0,.35,1) forwards;
+}
+
+@keyframes scale {
+  0%{
+    transform: scale(1);
+  }
+  100%{
+    transform: scale(1.6);
+  }
+}
+
+
+
 .inner-txt .bottom_txt {
   height: 100%;
   display: flex;
+  text-align: right;
+  flex-direction: column;
   justify-content: end;
   align-items: end;
 }
