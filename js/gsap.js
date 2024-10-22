@@ -82,6 +82,29 @@ document.addEventListener("DOMContentLoaded", () => {
   //   });
   // });
 
+
+  //video scroll event
+  // const video = document.querySelector(".video-scale");
+  // gsap.fromTo(
+  //   video, 
+  //   { scale: 0.5, opacity: 0 },  // 초기 상태 (작게 시작)
+  //   { 
+  //     scale: 1, 
+  //     opacity: 1,  // 스크롤 중 비디오가 점점 나타나도록 설정
+  //     scrollTrigger: {
+  //       trigger: ".movie-item",   // 비디오가 속한 섹션
+  //       start: "top 80%",         // 트리거가 시작되는 지점
+  //       end: "bottom top",        // 트리거가 끝나는 지점
+  //       scrub: 1,                 // 스크롤에 맞춰 애니메이션 진행
+  //       pin: true,                // 비디오가 스크롤 동안 고정됨
+  //     },
+  //     onLeaveBack: () => ScrollTrigger.refresh(),
+  //     ease: "power2.out"           // 부드러운 애니메이션
+  //   }
+  // );
+
+
+
   window.addEventListener("resize", () => {
     const introSection = document.querySelector(".intro-sec");
     introSection.style.height = `${window.innerHeight}px`;

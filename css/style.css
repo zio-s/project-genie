@@ -9,7 +9,8 @@
   /* 폰트 */
 }
 /* made in fullpage.js */
-.fp-warning, .fp-watermark{
+.fp-warning,
+.fp-watermark {
   display: none;
 }
 .blind {
@@ -173,7 +174,6 @@ body {
   padding-top: 90px;
   /* overflow: hidden; */
   position: relative;
-  
 }
 .cont-t {
   height: 100%;
@@ -190,7 +190,7 @@ body {
   transform: scale(1);
   color: #fff;
 }
-.top-t{
+.top-t {
   flex: 1;
 }
 .inner-txt p {
@@ -198,22 +198,22 @@ body {
 }
 .inner-txt.active {
   color: #0095ff;
-  transition: .5s;
+  transition: 0.5s;
 }
-.inner-txt .top_txt{
+.inner-txt .top_txt {
   transform-origin: top left;
   transform: scale(1);
-  transition: transform 1s cubic-bezier(.65,0,.35,1);
+  transition: transform 1s cubic-bezier(0.65, 0, 0.35, 1);
 }
-.inner-txt .bottom_txt{
+.inner-txt .bottom_txt {
   transform-origin: bottom right;
   transform: scale(1);
-  transition: transform 1s cubic-bezier(.65,0,.35,1);
+  transition: transform 1s cubic-bezier(0.65, 0, 0.35, 1);
 }
-.inner-txt.active .top_txt{
+.inner-txt.active .top_txt {
   transform: scale(1.6);
 }
-.inner-txt.active .bottom_txt{
+.inner-txt.active .bottom_txt {
   transform: scale(1.6);
 }
 
@@ -238,7 +238,6 @@ body {
 .movie-item {
   width: 100%;
   height: 100vh;
-  /* transform: translateY(100%); */
 }
 .movie__t {
   width: 100%;
@@ -251,7 +250,7 @@ body {
   margin: 0 auto;
   padding-top: 100px;
 }
-.movie__vidio {
+.movie__video {
   text-align: center;
 }
 /* sec-01 end */
@@ -384,30 +383,33 @@ body {
   overflow: hidden;
   position: relative;
 }
-.news-list ul li a{
+.news-list ul li a {
   display: block;
 }
-.news-list ul li a::after{
-  content: '';
+.news-list ul li a::after {
+  content: "";
   position: absolute;
-  top: 100%; left: 0; right: 0; bottom: 0;
-  background: rgba(0, 0, 0, .3);
-  transition: .3s;
+  top: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
   z-index: 0;
 }
-.news-list ul li a:hover::after{
+.news-list ul li a:hover::after {
   top: 0;
 }
-.news-list ul li a:hover .list__goto{
+.news-list ul li a:hover .list__goto {
   border-color: #0095ff;
   color: #0095ff;
 }
-.news-list ul li a:hover img{
+.news-list ul li a:hover img {
   transform: scale(1.2);
 }
 .news-list img {
   object-fit: cover;
-  transition: .3s;
+  transition: 0.3s;
 }
 .news-list .list__txtbox {
   width: 100%;
@@ -426,9 +428,9 @@ body {
   right: 0;
   bottom: 0;
   z-index: -1;
-  background: rgba(0, 0, 0, .1);
+  background: rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
-  box-shadow: 0px -5px 15px rgba(0, 0, 0, .3);
+  box-shadow: 0px -5px 15px rgba(0, 0, 0, 0.3);
 }
 .list__txt {
   width: 100%;
@@ -450,14 +452,13 @@ body {
   font-weight: 900;
 }
 
-
 /* footer */
-.sec-news .fp-overflow{
+.sec-news .fp-overflow {
   display: block;
   /* overflow: hidden; */
   scrollbar-width: none;
 }
-#footer{
+#footer {
   width: 100%;
   height: 120px;
   background: #1e1e1e;
@@ -469,19 +470,19 @@ body {
   border-top: 1px solid #8e8e8e;
   text-align: center;
 }
-.f_logo p{
+.f_logo p {
   width: 92px;
   height: 39px;
   background: url(../images/f_logo.png) no-repeat center/contain;
 }
-.sns{
+.sns {
   height: 100%;
   display: flex;
   align-items: center;
   gap: 20px;
 }
-.sns a{
-  font-family: 'Line Awesome Brands';
+.sns a {
+  font-family: "Line Awesome Brands";
   font-weight: 900;
   display: block;
   color: #fff;
@@ -489,21 +490,48 @@ body {
   position: relative;
   font-size: 2rem;
 }
-.tw::after{
+.tw::after {
   display: block;
   content: "\f099";
 }
-.ig::after{
+.ig::after {
   display: block;
   content: "\f16d";
-
 }
-.yt::after{
+.yt::after {
   display: block;
   content: "\f167";
 }
 
-.sns a:hover::after{
+.sns a:hover::after {
   color: #0095ff;
   font-size: 2.3rem;
+}
+
+/* test */
+
+.movie-item {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.video-scale {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 비디오가 화면에 꽉 차도록 */
+  transform: scale(0.5); /* 초기 스케일 */
+  opacity: 0; /* 초기 투명도 */
+}
+
+.movie__t {
+  position: absolute;
+  top: 10%;
+  color: white;
+  font-size: 2rem;
+  text-align: center;
 }
