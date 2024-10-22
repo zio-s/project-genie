@@ -195,39 +195,27 @@ body {
 }
 .inner-txt p {
   line-height: 1;
-  transition: .5s;
-  display: inline-block;
 }
 .inner-txt.active {
   color: #0095ff;
+  transition: .5s;
 }
 .inner-txt .top_txt{
   transform-origin: top left;
   transform: scale(1);
-  
-  
+  transition: transform 1s cubic-bezier(.65,0,.35,1);
 }
 .inner-txt .bottom_txt{
   transform-origin: bottom right;
   transform: scale(1);
+  transition: transform 1s cubic-bezier(.65,0,.35,1);
 }
-/* hover 애니메이션  */
-.inner-txt.active .top_txt,
+.inner-txt.active .top_txt{
+  transform: scale(1.6);
+}
 .inner-txt.active .bottom_txt{
-  animation: scale 1s cubic-bezier(.65,0,.35,1) forwards;
+  transform: scale(1.6);
 }
-
-@keyframes scale {
-  0%{
-    transform: scale(1);
-  }
-  100%{
-    transform: scale(1.6);
-    min-width: 100%;
-  }
-}
-
-
 
 .inner-txt .bottom_txt {
   height: 100%;
