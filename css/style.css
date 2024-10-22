@@ -181,6 +181,7 @@ body {
   position: relative;
   justify-content: space-between;
   z-index: 2;
+  overflow: hidden;
 }
 .inner-txt {
   height: 100%;
@@ -195,6 +196,7 @@ body {
 .inner-txt p {
   line-height: 1;
   transition: .5s;
+  display: inline-block;
 }
 .inner-txt.active {
   color: #0095ff;
@@ -221,6 +223,7 @@ body {
   }
   100%{
     transform: scale(1.6);
+    min-width: 100%;
   }
 }
 
