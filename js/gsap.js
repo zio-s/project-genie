@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
     start: "top 50%",
     end: "bottom bottom",
     scrub: 4,
-    markers: true,
+    markers: false,
     // 애니메이션 설정
     animation: gsap.fromTo(
       video,
