@@ -9,7 +9,14 @@ document.addEventListener("DOMContentLoaded", () => {
     easingcss3: "cubic-bezier(0.76, 0, 0.24, 1)",
     scrollingSpeed: 1250,
     touchSensitivity: 0.01,
-    // normalScrollElements: '.album-list-wrapper', // sec-album에서만 fullpage 스크롤 해제
+    onLeave: function (origin, destination, direction) {
+      // 해당 섹션에 'active'가 붙을 때 애니메이션 실행
+      if (destination.item.classList.contains("sec-album")) {
+        startWaveAnimation();
+      } else {
+        resetWaveAnimation(); // 다른 섹션으로 나갈 때 초기화
+      }
+    },
     afterLoad: (origin, destination) => {
       if (destination.index === 0) {
         ScrollTrigger.refresh();
@@ -92,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
     scroller: secScroller, // 스크롤러로 사용할 요소
     start: "top 50%",
     end: "bottom bottom",
-    scrub: 5,
+    scrub: 4,
     markers: false,
     // 애니메이션 설정
     animation: gsap.fromTo(
@@ -164,6 +171,44 @@ albumItems.forEach((item, index) => {
   );
 });
 
+// wave 애니메이션 
+const waveItems = gsap.utils.toArray(".waves > li");
+
+// ScrollTrigger로 album 섹션에 진입할 때 애니메이션 작동
+ScrollTrigger.create({
+  trigger: albumS,   // sec-album 섹션이 트리거
+  start: "top 100%",        // 뷰포트의 80%에 도달할 때 시작
+  end: "bottom bottom",       // 섹션이 끝날 때까지 유지
+  onEnter: () => startWaveAnimation(), // 진입 시 애니메이션 시작
+  onLeaveBack: () => resetWaveAnimation(), // 뒤로 빠져나갈 때 초기화
+});
+
+// 웨이브 애니메이션 함수
+function startWaveAnimation() {
+  waveItems.forEach((item, index) => {
+    const randomScale = gsap.utils.random(1.3, 2, true)();
+    const randomDuration = gsap.utils.random(1, 1.8, true)();
+    const randomDelay = gsap.utils.random(0, 0.3, true)();
+
+    // 애니메이션 적용
+    gsap.to(item, {
+      scaleY: randomScale,
+      duration: randomDuration,
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut",
+      delay: index * 0.1 + randomDelay,
+    });
+  });
+}
+
+// 뒤로 나갈 때 애니메이션 초기화 (선택적)
+function resetWaveAnimation() {
+  waveItems.forEach((item) => {
+    gsap.to(item, { scaleY: 1, duration: 0.5, ease: "none" });
+  });
+}
+
 
   window.addEventListener("resize", () => {
     const introSection = document.querySelector(".intro-sec");
@@ -171,7 +216,7 @@ albumItems.forEach((item, index) => {
   });
 
 
-
+  
 });
 
 
