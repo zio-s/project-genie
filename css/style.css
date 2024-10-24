@@ -26,7 +26,6 @@ body {
   height: 100%;
   overflow: hidden;
   font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard Variable", Pretendard, Roboto, "Noto Sans KR", "Segoe UI", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif, Poppins;
-  
 }
 /* 폰트 */
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
@@ -44,10 +43,9 @@ body {
 
 .fp-overflow {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: flex;
-  justify-content: flex-start;
-  max-height: 100vh;
+  /* justify-content: flex-start; */
 }
 .fp-is-overflow > .fp-overflow {
   overflow: auto;
@@ -235,7 +233,6 @@ body {
   position: absolute;
   background: url(../images/blue-cle.svg) no-repeat -10% 100%;
 }
-
 .movie-item {
   height: 100vh;
   display: flex;
@@ -252,7 +249,7 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
 }
 .video-scale {
   width: 100%;
@@ -262,7 +259,6 @@ body {
   transform-origin: center;
   user-select: none;
   opacity: 1;
-  
 }
 
 .movie__t {
@@ -273,34 +269,56 @@ body {
   text-align: center;
   z-index: 0;
 }
+
 /* sec-01 end */
 
-/* sec-album */
-.sec-album[class=fp-overflow]{
+/* sec-02 */
+.sec-album .fp-overflow {
+  /* display: flex; */
+}
+
+.sec-album{
+  position: relative;
   height: fit-content;
-}
-.album-container {
   display: flex;
-  /* max-width: 1200px; */
-  width: 100%;
-  flex-direction: row-reverse;
-  justify-content: space-between;
-  background: url(../images/music_big_bg.svg) no-repeat center/cover;
+  flex-direction: column;
 }
+
 .album-bg {
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  visibility: hidden;
   position: absolute;
-  background: url(../images/music_big_bg.svg) no-repeat center/cover;
+  overflow: hidden;
+  background-image: url(../images/music_small_1.svg);
+  background-size: cover;
+  background-position: center;
+  transition: background-image .6s cubic-bezier(0.65, 0, 0.35, 1) ;
+  pointer-events : none;
+  /* z-index: -1; */
+}
+.album-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.7;
+  background-color: rgba(0, 0, 0, 0.5); /* 반투명한 검은 배경 */
+  z-index: 0;
 }
 .album-info {
-  width: 40%;
+  width: 30%;
   display: flex;
+  position: absolute;
   justify-content: center;
   flex-direction: column;
+  top: 50%;
+  left: 50%;
+  transform: translate(50%, -50%);
+  z-index: 1;
 }
 
 .album-title {
@@ -315,16 +333,18 @@ body {
   color: #c3c3c3;
 }
 
-.album-list-wrapper {
-  width: 60%;
-   /* 세로 스크롤 임시 활성화 없앨거임 */
-  height: 100vh;
-}
-
 .album-list {
-  display: grid;
-  justify-content: center;
-  gap: 2rem;
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  padding-left: 50px;
+  padding-bottom: 200px;
+  padding-top: 200px;
+  background: #1e1e1e;
+
+  
 }
 
 .album-item {
@@ -332,20 +352,18 @@ body {
   height: 600px;
   background-color: #333;
   border-radius: 10px;
-  overflow: hidden;
   position: relative;
-  opacity: 1;
-  transition: transform 0.3s;
-  transform: translateY(50px); /* 아래에서 시작 */
+  transform: translateY(50%); /* 아래쪽에서 시작 */
+
 }
 
 /* 지그재그 리스트  */
-.album-item:nth-child(odd) {
-  transform: translateX(-60%); /* 홀수 아이템 왼쪽 이동 */
-}
+/* .album-item:nth-child(odd) {
+  transform: translateX(-50%);
+} */
 .album-item:nth-child(even) {
-  transform: translateX(60%); /* 짝수 아이템 오른쪽 이동 */
-}
+  transform: translateX(50%);
+} 
 
 .album-cover {
   width: 100%;
@@ -534,5 +552,3 @@ body {
 }
 
 /* test */
-
-
