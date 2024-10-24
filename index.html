@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- fullpage js -->
-    <link rel="stylesheet" type="text/css" href="./lib/fullpage.css" />
-    <link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" >
+    <link rel="stylesheet" href="./lib/fullpage.css" />
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" />
     <!-- <link rel="stylesheet" href="./css/style-test.css" /> -->
     <link rel="stylesheet" href="./css/style.css" />
 
@@ -18,7 +18,6 @@
     <script src="./js/gsap.js"></script>
     <script src="./js/script.js"></script>
 
-    <!-- <link rel="stylesheet" href="test.css"> -->
     <title>genie</title>
   </head>
   <body>
@@ -37,11 +36,11 @@
         </div>
         <div class="height_box"></div>
       </div>
-      <div class="section sec-01 home">
+      <div class="section sec-01">
         <div class="cont">
           <div class="cont-t">
             <div class="inner-txt top-t">
-              <p class="top_txt">Your life<br>Filling MUSIC</p>
+              <p class="top_txt">Your life<br />Filling MUSIC</p>
             </div>
             <div class="inner-txt bottom-t">
               <p class="bottom_txt">
@@ -54,7 +53,7 @@
         </div>
         <div class="movie-item">
           <div class="movie__t">
-            <p>The Soundtrack of<br>Your Life Begins Now</p>
+            <p>The Soundtrack of<br />Your Life Begins Now</p>
           </div>
           <div class="movie__video">
             <video src="./video/videoplayback.mp4" muted class="video-scale" autoplay></video>
@@ -62,33 +61,44 @@
         </div>
       </div>
       <div class="section sec-album">
-        <div class="album-container">
-          <div class="album-info">
-            <h3 class="album-title">지금 가장 인기 있는<br />음악을 만나보세요!</h3>
-            <p class="album-desc">이 음악들을 통해 트렌드를 따라가고,<br />새로운 아티스트를 발견해보세요</p>
+        <div class="album-bg"></div>
+        <div class="album-info">
+          <h3 class="album-title">지금 가장 인기 있는<br />음악을 만나보세요!</h3>
+          <p class="album-desc">이 음악들을 통해 트렌드를 따라가고,<br />새로운 아티스트를 발견해보세요</p>
+        </div>
+        <div class="album-list">
+          <!-- 앨범 아이템 -->
+          <div class="album-item">
+            <img src="./images/music_small_1.svg" alt="앨범1" class="album-cover" />
+            <p class="album-name">Fourever</p>
+            <p class="artist-name">DAY6 (데이식스)</p>
           </div>
-          <div class="album-list-wrapper">
-            <div class="album-list">
-              <!-- 앨범 아이템 -->
-              <div class="album-item">
-                <img src="./images/music_small_1.svg" alt="앨범1" class="album-cover" />
-                <p class="album-name">Fourever</p>
-                <p class="artist-name">DAY6 (데이식스)</p>
-              </div>
-              <div class="album-item">
-                <img src="./images/music_small_2.svg" alt="앨범2" class="album-cover" />
-                <p class="album-name">앨범 제목2</p>
-                <p class="artist-name">아티스트 이름2</p>
-              </div>
-              <div class="album-item">
-                <img src="./images/music_small_2.svg" alt="앨범3" class="album-cover" />
-                <p class="album-name">앨범 제목2</p>
-                <p class="artist-name">아티스트 이름2</p>
-              </div>
-              <!-- 앨범 아이템 반복 -->
-            </div>
+          <div class="album-item">
+            <img src="./images/music_small_2.svg" alt="앨범2" class="album-cover" />
+            <p class="album-name">앨범 제목2</p>
+            <p class="artist-name">아티스트 이름2</p>
           </div>
-          <div class="album-bg"></div>
+          <div class="album-item">
+            <img src="./images/music_small_3.svg" alt="앨범3" class="album-cover" />
+            <p class="album-name">앨범 제목2</p>
+            <p class="artist-name">아티스트 이름2</p>
+          </div>
+          <div class="album-item">
+            <img src="./images/music_small_1.svg" alt="앨범3" class="album-cover" />
+            <p class="album-name">앨범 제목2</p>
+            <p class="artist-name">아티스트 이름2</p>
+          </div>
+          <div class="album-item">
+            <img src="./images/music_small_2.svg" alt="앨범3" class="album-cover" />
+            <p class="album-name">앨범 제목2</p>
+            <p class="artist-name">아티스트 이름2</p>
+          </div>
+          <div class="album-item">
+            <img src="./images/music_small_3.svg" alt="앨범3" class="album-cover" />
+            <p class="album-name">앨범 제목2</p>
+            <p class="artist-name">아티스트 이름2</p>
+          </div>
+          <!-- 앨범 아이템 반복 -->
         </div>
       </div>
       <div class="section sec-news">
@@ -99,73 +109,105 @@
           <div class="news-list">
             <ul>
               <li>
-                <a href="#"><span class="blind">news list1</span>
-                  <img src="./images/news-list-01.png" alt="album news">
+                <a href="#"
+                  ><span class="blind">news list1</span>
+                  <img src="./images/news-list-01.png" alt="album news" />
                   <div class="list__txtbox">
-                    <p class="list__txt">QUEEN의 귀환<br> 화사 컴백 이벤트</p>
+                    <p class="list__txt">
+                      QUEEN의 귀환<br />
+                      화사 컴백 이벤트
+                    </p>
                     <p class="list__goto">자세히보기</p>
                   </div>
                 </a>
               </li>
               <li>
-                <a href="#"><span class="blind">news list2</span>
-                  <img src="./images/news-list-02.png" alt="album news">
+                <a href="#"
+                  ><span class="blind">news list2</span>
+                  <img src="./images/news-list-02.png" alt="album news" />
                   <div class="list__txtbox">
-                    <p class="list__txt">본업하는 만능열쇠<br> 키(KEY) 컴백 이벤트</p>
+                    <p class="list__txt">
+                      본업하는 만능열쇠<br />
+                      키(KEY) 컴백 이벤트
+                    </p>
                     <p class="list__goto">자세히보기</p>
                   </div>
                 </a>
               </li>
               <li>
-                <a href="#"><span class="blind">news list3</span>
-                  <img src="./images/news-list-03.png" alt="album news">
+                <a href="#"
+                  ><span class="blind">news list3</span>
+                  <img src="./images/news-list-03.png" alt="album news" />
                   <div class="list__txtbox">
-                    <p class="list__txt">연준 첫 솔로 앨범<br> 다 같이 GGUM 질겅</p>
+                    <p class="list__txt">
+                      연준 첫 솔로 앨범<br />
+                      다 같이 GGUM 질겅
+                    </p>
                     <p class="list__goto">자세히보기</p>
                   </div>
                 </a>
               </li>
               <li>
-                <a href="#"><span class="blind">news list4</span>
-                  <img src="./images/news-list-04.png" alt="album news">
+                <a href="#"
+                  ><span class="blind">news list4</span>
+                  <img src="./images/news-list-04.png" alt="album news" />
                   <div class="list__txtbox">
-                    <p class="list__txt">가을남새 나는듯한<br> POP 모음</p>
+                    <p class="list__txt">
+                      가을남새 나는듯한<br />
+                      POP 모음
+                    </p>
                     <p class="list__goto">자세히보기</p>
                   </div>
                 </a>
               </li>
               <li>
-                <a href="#"><span class="blind">news list5</span>
-                  <img src="./images/news-list-05.png" alt="album news">
+                <a href="#"
+                  ><span class="blind">news list5</span>
+                  <img src="./images/news-list-05.png" alt="album news" />
                   <div class="list__txtbox">
-                    <p class="list__txt">가을여행이 최고라고<br> 생각하는 사람들의 모음집</p>
+                    <p class="list__txt">
+                      가을여행이 최고라고<br />
+                      생각하는 사람들의 모음집
+                    </p>
                     <p class="list__goto">자세히보기</p>
                   </div>
                 </a>
               </li>
               <li>
-                <a href="#"><span class="blind">news list6</span>
-                  <img src="./images/news-list-06.png" alt="album news">
+                <a href="#"
+                  ><span class="blind">news list6</span>
+                  <img src="./images/news-list-06.png" alt="album news" />
                   <div class="list__txtbox">
-                    <p class="list__txt">가을여행이 최고라고<br> 생각하는 사람들의 모음집</p>
+                    <p class="list__txt">
+                      가을여행이 최고라고<br />
+                      생각하는 사람들의 모음집
+                    </p>
                     <p class="list__goto">자세히보기</p>
                   </div>
                 </a>
               </li>
               <li>
-                <a href="#"><span class="blind">news list7</span>
-                  <img src="./images/news-list-01.png" alt="album news">
+                <a href="#"
+                  ><span class="blind">news list7</span>
+                  <img src="./images/news-list-01.png" alt="album news" />
                   <div class="list__txtbox">
-                    <p class="list__txt">QUEEN의 귀환<br> 화사 컴백 이벤트</p>
+                    <p class="list__txt">
+                      QUEEN의 귀환<br />
+                      화사 컴백 이벤트
+                    </p>
                     <p class="list__goto">자세히보기</p>
                   </div>
                 </a>
               </li>
               <li>
-                <a href="#"><span class="blind">news list8</span>
-                  <img src="./images/news-list-02.png" alt="album news">
+                <a href="#"
+                  ><span class="blind">news list8</span>
+                  <img src="./images/news-list-02.png" alt="album news" />
                   <div class="list__txtbox">
-                    <p class="list__txt">QUEEN의 귀환<br> 화사 컴백 이벤트</p>
+                    <p class="list__txt">
+                      QUEEN의 귀환<br />
+                      화사 컴백 이벤트
+                    </p>
                     <p class="list__goto">자세히보기</p>
                   </div>
                 </a>
