@@ -406,6 +406,16 @@ body {
   /* animation-play-state: running; */
   background: #0095ff;
 }
+.wave-dim {
+  position: absolute;
+  height: 200vh;
+  width: 25%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-70%, -70%);
+  background: linear-gradient(270deg, #0b395a 0%, rgba(255, 255, 255, 0) 100%);
+  z-index: 3;
+}
 
 /* section 04 */
 .sec-news {
@@ -534,6 +544,24 @@ body {
   /* width: fit-content !important; */
   width: 300px;
   background: #fff;
+}
+.slide-overlay {
+  position: absolute;
+  top: 0;
+  width: 50px;
+  height: 100%;
+  z-index: 10;
+  pointer-events: none;
+}
+.slide-overlay.left {
+  left: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, .8), transparent);
+}
+
+/* 오른쪽 딤드 */
+.slide-overlay.right {
+  right: 0;
+  background: linear-gradient(to left, rgba(0, 0, 0, .8), transparent);
 }
 
 /* footer */
