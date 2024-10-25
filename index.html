@@ -59,7 +59,9 @@
             <p>The Soundtrack of<br />Your Life Begins Now</p>
           </div>
           <div class="movie__video">
-            <video src="./video/videoplayback.mp4" muted class="video-scale" autoplay></video>
+            <video class="video-scale" muted autoplay loop playsinline>
+              <source src="./video/videoplayback.mp4" type="video/mp4">
+            </video>
           </div>
         </div>
       </div>
@@ -70,6 +72,7 @@
           <p class="album-desc">이 음악들을 통해 트렌드를 따라가고,<br />새로운 아티스트를 발견해보세요</p>
         </div>
         <div class="wave-container">
+          <div class="wave-dim"></div>
           <ul class="waves">
             <li class="wave"></li>
             <li class="wave"></li>
@@ -227,6 +230,8 @@
                 </a>
               </li>
             </ul>
+            <div class="slide-overlay left"></div>
+            <div class="slide-overlay right"></div>
             <div class="swiper-pagination"></div>
           </div>
         </div>
