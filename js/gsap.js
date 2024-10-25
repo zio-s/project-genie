@@ -13,8 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
       // 해당 섹션에 'active'가 붙을 때 애니메이션 실행
       if (destination.item.classList.contains("sec-album")) {
         startWaveAnimation();
-      } else {
-        resetWaveAnimation(); // 다른 섹션으로 나갈 때 초기화
       }
     },
     afterLoad: (origin, destination) => {
@@ -186,8 +184,8 @@ ScrollTrigger.create({
 // 웨이브 애니메이션 함수
 function startWaveAnimation() {
   waveItems.forEach((item, index) => {
-    const randomScale = gsap.utils.random(1.3, 2, true)();
-    const randomDuration = gsap.utils.random(1, 1.8, true)();
+    const randomScale = gsap.utils.random(1.3, 1.7, true)();
+    const randomDuration = gsap.utils.random(0.3, 0.7, true)();
     const randomDelay = gsap.utils.random(0, 0.3, true)();
 
     // 애니메이션 적용
@@ -202,12 +200,6 @@ function startWaveAnimation() {
   });
 }
 
-// 뒤로 나갈 때 애니메이션 초기화 (선택적)
-function resetWaveAnimation() {
-  waveItems.forEach((item) => {
-    gsap.to(item, { scaleY: 1, duration: 0.5, ease: "none" });
-  });
-}
 
 
   window.addEventListener("resize", () => {
