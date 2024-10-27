@@ -22,13 +22,11 @@
   overflow: hidden;
 }
 
-
-
 // header
 // footer
 #footer {
   width: 100%;
-  height: 120px;
+  height: 200px;
   background: #1e1e1e;
   display: flex;
   justify-content: space-between;
@@ -37,5 +35,27 @@
   color: #fff;
   border-top: 1px solid #8e8e8e;
   text-align: center;
+
+  @include mobile {
+    height: 300px;
+    display: block;
+    padding: 30px 20px;
+    .f_logo {
+      margin-bottom: 30px;
+      p {
+        margin: 0 auto;
+      }
+    }
+    .sns {
+      justify-content: center;
+      margin-top: 30px;
+      a {
+        font-size: 4rem;
+        &:hover::after {
+          font-size: 4.3rem;
+        }
+      }
+    }
+  }
 }
 // aside

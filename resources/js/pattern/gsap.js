@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  
   gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
   // Fullpage.js 초기화
@@ -116,103 +115,90 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     ),
   });
-  ScrollTrigger.refresh();
-  
-// 모든 앨범 아이템 배열화
-const albumItems = gsap.utils.toArray(".album-item");
-const albumS = document.querySelector(".sec-album .fp-overflow");
-const albumBg = document.querySelector(".album-bg");  
-let previousSrc = [albumBg.style.backgroundImage];
-// 각 앨범 아이템에 대해 반복문 실행
-albumItems.forEach((item, index) => {
-  const img = item.querySelector(".album-cover");
-  const imgSrc = img.getAttribute("src");   
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: item,  // 앨범 리스트가 트리거
-      scroller: albumS,
-      start: "top 100%",        // 앨범 리스트가 80%에 도달할 때 시작
-      end: "top 80%",       // 앨범 리스트가 20%에 도달할 때 종료
-      scrub: 7, 
-      onEnter: () => {
-        // 새로운 배경 이미지 설정
-        if (previousSrc.length === 0) {
-          previousSrc.push(albumBg.style.backgroundImage); // 처음 배경 이미지 저장
-          
-        } else {
-          previousSrc[index] = albumBg.style.backgroundImage; // 현재 배경 이미지 저장
-        }
-        albumBg.style.backgroundImage = `url(${imgSrc})`; 
+
+  // 모든 앨범 아이템 배열화
+  const albumItems = gsap.utils.toArray(".album-item");
+  const albumS = document.querySelector(".sec-album .fp-overflow");
+  const albumBg = document.querySelector(".album-bg");
+  let previousSrc = [albumBg.style.backgroundImage];
+  // 각 앨범 아이템에 대해 반복문 실행
+  albumItems.forEach((item, index) => {
+    const img = item.querySelector(".album-cover");
+    const imgSrc = img.getAttribute("src");
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: item, // 앨범 리스트가 트리거
+        scroller: albumS,
+        start: "top 100%", // 앨범 리스트가 80%에 도달할 때 시작
+        end: "top 80%", // 앨범 리스트가 20%에 도달할 때 종료
+        scrub: 7,
+        onEnter: () => {
+          // 새로운 배경 이미지 설정
+          if (previousSrc.length === 0) {
+            previousSrc.push(albumBg.style.backgroundImage); // 처음 배경 이미지 저장
+          } else {
+            previousSrc[index] = albumBg.style.backgroundImage; // 현재 배경 이미지 저장
+          }
+          albumBg.style.backgroundImage = `url(${imgSrc})`;
+        },
+        onLeaveBack: () => {
+          // 스크롤이 뒤로 돌아갈 때 이전 이미지 복원
+          if (previousSrc[index]) {
+            albumBg.style.backgroundImage = previousSrc[index]; // 이전 이미지로 복원
+          } else {
+            albumBg.style.backgroundImage = previousSrc[index]; // 이전 이미지가 없으면 none으로 설정
+          }
+        },
+        onLeave: () => {
+          // 스크롤이 아래로 갈 때 다음 이미지 복원
+          if (previousSrc[index + 1]) {
+            albumBg.style.backgroundImage = previousSrc[index + 1] || "none"; // 다음 이미지로 복원
+          }
+        },
       },
-      onLeaveBack: () => {
-        // 스크롤이 뒤로 돌아갈 때 이전 이미지 복원
-        if (previousSrc[index]) {
-          albumBg.style.backgroundImage = previousSrc[index]; // 이전 이미지로 복원
-        } else {
-          albumBg.style.backgroundImage = previousSrc[index]; // 이전 이미지가 없으면 none으로 설정
-        }
-      },
-      onLeave: () => {
-        // 스크롤이 아래로 갈 때 다음 이미지 복원
-        if (previousSrc[index + 1]) {
-          albumBg.style.backgroundImage = previousSrc[index + 1] || "none"; // 다음 이미지로 복원
-        }
-      },
-    },
-  });
-
-  // 애니메이션 정의
-  tl.fromTo(
-    item,
-    {  y: 50, scale:0.2,  },    // 시작 상태 (아래에서 투명하게 시작)
-    {  y: 0, scale:1, duration: .5, ease: "cubic-bezier(0.45, 0, 0.55, 1)" } // 최종 상태 (보임)
-  );
-});
-
-// wave 애니메이션 
-const waveItems = gsap.utils.toArray(".waves > li");
-
-// ScrollTrigger로 album 섹션에 진입할 때 애니메이션 작동
-ScrollTrigger.create({
-  trigger: albumS,   // sec-album 섹션이 트리거
-  start: "top 100%",        // 뷰포트의 80%에 도달할 때 시작
-  end: "bottom bottom",       // 섹션이 끝날 때까지 유지
-  onEnter: () => startWaveAnimation(), // 진입 시 애니메이션 시작
-  onLeaveBack: () => resetWaveAnimation(), // 뒤로 빠져나갈 때 초기화
-});
-
-// 웨이브 애니메이션 함수
-function startWaveAnimation() {
-  waveItems.forEach((item, index) => {
-    const randomScale = gsap.utils.random(1.3, 1.7, true)();
-    const randomDuration = gsap.utils.random(0.3, 0.7, true)();
-    const randomDelay = gsap.utils.random(0, 0.3, true)();
-
-    // 애니메이션 적용
-    gsap.to(item, {
-      scaleY: randomScale,
-      duration: randomDuration,
-      repeat: -1,
-      yoyo: true,
-      ease: "sine.inOut",
-      delay: index * 0.1 + randomDelay,
     });
+
+    // 애니메이션 정의
+    tl.fromTo(
+      item,
+      { y: 50, scale: 0.2 }, // 시작 상태 (아래에서 투명하게 시작)
+      { y: 0, scale: 1, duration: 0.5, ease: "cubic-bezier(0.45, 0, 0.55, 1)" } // 최종 상태 (보임)
+    );
   });
-}
 
+  // wave 애니메이션
+  const waveItems = gsap.utils.toArray(".waves > li");
 
+  // ScrollTrigger로 album 섹션에 진입할 때 애니메이션 작동
+  ScrollTrigger.create({
+    trigger: albumS, // sec-album 섹션이 트리거
+    start: "top 100%", // 뷰포트의 80%에 도달할 때 시작
+    end: "bottom bottom", // 섹션이 끝날 때까지 유지
+    onEnter: () => startWaveAnimation(), // 진입 시 애니메이션 시작
+  });
+
+  // 웨이브 애니메이션 함수
+  function startWaveAnimation() {
+    waveItems.forEach((item, index) => {
+      const randomScale = gsap.utils.random(1.3, 1.7, true)();
+      const randomDuration = gsap.utils.random(0.3, 0.7, true)();
+      const randomDelay = gsap.utils.random(0, 0.3, true)();
+
+      // 애니메이션 적용
+      gsap.to(item, {
+        scaleY: randomScale,
+        duration: randomDuration,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+        delay: index * 0.1 + randomDelay,
+      });
+    });
+  }
 
   window.addEventListener("resize", () => {
     const introSection = document.querySelector(".intro-sec");
     introSection.style.height = `${window.innerHeight}px`;
+    ScrollTrigger.refresh();
   });
-
-
-  
 });
-
-
-
-
-
-

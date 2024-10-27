@@ -1,20 +1,25 @@
 // 사이트 컨텐츠 내용
 
 :root {
-  --swiper-theme-color: red;
+  --swiper-theme-color: #2d63ad;
 }
-
+// full page 네비게이션 버튼
+#fp-nav {
+  display: none;
+}
 .swiper {
   width: 100%;
-  height: 100%;
+  padding-left: 20px;
 }
-
+.swiper-wrapper {
+  width: auto;
+}
 .swiper-slide {
-  
   background: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .swiper-slide img {
@@ -28,4 +33,32 @@
   display: block;
   width: 100%;
   height: 100%;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  display: none;
+}
+.swiper-pagination {
+  display: none;
+}
+/* swiper */
+
+.slide-overlay {
+  position: absolute;
+  top: 0;
+  width: 50px;
+  height: 100%;
+  z-index: 10;
+  pointer-events: none;
+}
+.slide-overlay.left {
+  left: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.8), transparent);
+}
+
+/* 오른쪽 딤드 */
+.slide-overlay.right {
+  right: 0;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.8), transparent);
 }
