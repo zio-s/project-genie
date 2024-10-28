@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   var swiper = new Swiper(".newsSwiper", {
-    slidesPerView: "auto",
+    slidesPerView: 1.6,
     observer: true,
     observeParents: true,
     // slidesOffsetAfter: 20,
@@ -22,10 +22,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     breakpoints: {
       420: {
-        slidesPerView: 2,
+        slidesPerView: 2.2,
       },
       650: {
-        slidesPerView: 3,
+        slidesPerView: 3.5,
       },
       1024: {
         slidesPerView: 4,

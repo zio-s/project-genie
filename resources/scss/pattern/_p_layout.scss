@@ -603,6 +603,9 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  @include mobile {
+    justify-content: space-evenly;
+  }
 }
 .sound {
   width: 100%;
@@ -610,7 +613,8 @@
   margin-bottom: 28px;
   background-color: #2d63ad;
   @include mobile {
-    margin-bottom: 45px;
+    margin-bottom: 0;
+    height: 27%;
   }
 }
 
@@ -633,6 +637,7 @@
   overflow: hidden;
   position: relative;
   @include mobile {
+    height: auto;
   }
 }
 .news-list ul li img {
@@ -641,6 +646,9 @@
   width: 100%;
   object-fit: cover;
   object-position: center center;
+  @include mobile {
+    height: auto;
+  }
 }
 .news-list ul li a {
   display: block;
@@ -724,9 +732,9 @@
   text-align: center;
 
   @include mobile {
-    height: 326px;
+    height: 330px;
     display: block;
-    padding: 30px 20px;
+    padding: 30px 20px 0 20px;
     .f_logo {
       margin-bottom: 30px;
       p {
