@@ -19,4 +19,17 @@ document.addEventListener("DOMContentLoaded", () => {
   // 이벤트 리스너 추가 (bottomTxt)
   bottomTxt.addEventListener("mouseenter", () => addActiveClass(bottomTxt));
   bottomTxt.addEventListener("mouseleave", () => removeActiveClass(bottomTxt));
+
+  // menu btn
+  const menuBtn = document.querySelector(".menu-btn");
+  function toggleClass(element, className) {
+    if (element.classList.contains(className)) {
+      element.classList.remove(className);
+    } else {
+      element.classList.add(className);
+    }
+  }
+  menuBtn.addEventListener("click", function () {
+    toggleClass(menuBtn, "active");
+  });
 });
