@@ -763,10 +763,13 @@ body {
   .album-info {
     width: 100%;
     display: block;
+    padding: 5% 0;
     transform: none;
     text-align: center;
-    top: 7%;
+    top: 0;
     left: 0;
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
   }
 }
 .album-info .album-title {
@@ -777,7 +780,7 @@ body {
 }
 @media (max-width: 599px) {
   .album-info .album-title {
-    font-size: 2rem;
+    font-size: 2.3rem;
   }
 }
 
@@ -788,7 +791,7 @@ body {
 }
 @media (max-width: 599px) {
   .album-desc {
-    font-size: 1rem;
+    font-size: 1.3rem;
   }
 }
 
@@ -799,14 +802,16 @@ body {
   display: flex;
   flex-direction: column;
   gap: 100px;
-  padding-left: 50px;
+  padding-left: 10%;
   padding-bottom: 200px;
   padding-top: 200px;
   background: #1e1e1e;
 }
 @media (max-width: 599px) {
   .album-list {
-    gap: 50px;
+    gap: 100px;
+    padding-left: 0;
+    align-items: center;
   }
 }
 
@@ -817,18 +822,42 @@ body {
   border-radius: 10px;
   overflow: hidden;
   position: relative;
-  transform: translateY(50%); /* 아래쪽에서 시작 */
 }
 @media (max-width: 599px) {
   .album-item {
-    width: 200px;
-    height: 300px;
+    width: 250px;
+    height: 450px;
+  }
+}
+
+.album-item:nth-child(odd) {
+  transform: translateX(50%);
+}
+@media (max-width: 599px) {
+  .album-item:nth-child(odd) {
+    transform: translateX(-50%);
+  }
+}
+@media (min-width: 550px) {
+  .album-item:nth-child(odd) {
+    transform: translateX(0%);
   }
 }
 
 .album-item:nth-child(even) {
   transform: translateX(50%);
 }
+@media (max-width: 599px) {
+  .album-item:nth-child(even) {
+    transform: translateX(50%);
+  }
+}
+@media (min-width: 550px) {
+  .album-item:nth-child(even) {
+    transform: translateX(0%);
+  }
+}
+
 .album-cover {
   width: 100%;
   -o-object-fit: contain;

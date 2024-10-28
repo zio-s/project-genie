@@ -244,10 +244,12 @@ body {
   @include mobile {
     width: 100%;
     display: block;
+    padding: 5% 0;
     transform: none;
     text-align: center;
-    top: 7%;
+    top: 0;
     left: 0;
+    backdrop-filter: blur(10px);
   }
   .album-title {
     width: 100%;
@@ -255,7 +257,7 @@ body {
     margin-bottom: 1rem;
     color: #fff;
     @include mobile {
-      font-size: 2rem;
+      font-size: 2.3rem;
     }
   }
 }
@@ -265,7 +267,7 @@ body {
   line-height: 1.5;
   color: #c3c3c3;
   @include mobile {
-    font-size: 1rem;
+    font-size: 1.3rem;
   }
 }
 
@@ -275,14 +277,14 @@ body {
   display: flex;
   flex-direction: column;
   gap: 100px;
-  padding-left: 50px;
+  padding-left: 10%;
   padding-bottom: 200px;
   padding-top: 200px;
   background: #1e1e1e;
   @include mobile {
-    //   padding-left: 10%;
-    //   padding-bottom: 0px;
-    gap: 50px;
+    gap: 100px;
+    padding-left: 0;
+    align-items: center;
   }
 }
 
@@ -293,18 +295,28 @@ body {
   border-radius: 10px;
   overflow: hidden;
   position: relative;
-  transform: translateY(50%); /* 아래쪽에서 시작 */
   @include mobile {
-    width: 200px;
-    height: 300px;
+    width: 250px;
+    height: 450px;
     // flex-shrink: 0;
-    // transform: translateY(0%); /* 아래쪽에서 시작 */
+  }
+}
+.album-item:nth-child(odd) {
+  transform: translateX(50%);
+  @include mobile {
+    transform: translateX(-50%);
+  }
+  @media (min-width: 550px) {
+    transform: translateX(0%);
   }
 }
 .album-item:nth-child(even) {
   transform: translateX(50%);
   @include mobile {
-    // transform: translateX(0%);
+    transform: translateX(50%);
+  }
+  @media (min-width: 550px) {
+    transform: translateX(0%);
   }
 }
 
