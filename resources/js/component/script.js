@@ -32,4 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
   menuBtn.addEventListener("click", function () {
     toggleClass(menuBtn, "active");
   });
+
+  //header
 });

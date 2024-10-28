@@ -5,21 +5,32 @@ document.addEventListener("DOMContentLoaded", () => {
   new fullpage("#fullpage", {
     autoScrolling: true,
     navigation: true,
+    scrollOverflow: true, // 스크롤 가능한 컨텐츠 허용
+    fitToSection: false,
     easingcss3: "cubic-bezier(0.76, 0, 0.24, 1)",
     scrollingSpeed: 1250,
     touchSensitivity: 0.01,
     onLeave: function (origin, destination, direction) {
-      // 해당 섹션에 'active'가 붙을 때 애니메이션 실행
+      const header = document.querySelector("#header");
       if (destination.item.classList.contains("sec-album")) {
         startWaveAnimation();
       }
-    },
-    afterLoad: (origin, destination) => {
-      if (destination.index === 0) {
-        ScrollTrigger.refresh();
+      // 첫 번째 섹션(intro)을 떠날 때 헤더를 나타냄
+      if (destination.index !== 0) {
+        gsap.to(header, { top: "0", duration: 0.6 });
       }
     },
+
+    afterLoad: (origin, destination) => {
+      const header = document.querySelector("#header");
+
+      if (destination.index === 0) {
+        gsap.to(header, { top: "-100px", duration: 0.1 });
+      }
+      // ScrollTrigger.refresh();
+    },
   });
+
   const bigLogo = document.querySelector(".big-logo");
   const smallLogo = document.querySelector(".small-logo");
   const heightBox = document.querySelector(".height_box");
