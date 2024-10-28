@@ -129,9 +129,9 @@ document.addEventListener("DOMContentLoaded", () => {
       scrollTrigger: {
         trigger: item, // 앨범 리스트가 트리거
         scroller: albumS,
-        start: "top 100%", // 앨범 리스트가 80%에 도달할 때 시작
-        end: "top 80%", // 앨범 리스트가 20%에 도달할 때 종료
-        scrub: 7,
+        start: "top 90%", // 앨범 리스트가 80%에 도달할 때 시작
+        end: "top 70%", // 앨범 리스트가 20%에 도달할 때 종료
+        scrub: 4,
         onEnter: () => {
           // 새로운 배경 이미지 설정
           if (previousSrc.length === 0) {
@@ -161,8 +161,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // 애니메이션 정의
     tl.fromTo(
       item,
-      { y: 50, scale: 0.2 }, // 시작 상태 (아래에서 투명하게 시작)
-      { y: 0, scale: 1, duration: 0.5, ease: "cubic-bezier(0.45, 0, 0.55, 1)" } // 최종 상태 (보임)
+      { y: 20, scale: 0.2 },
+      { y: 0, scale: 1, duration: 1, ease: "cubic-bezier(0.45, 0, 0.55, 1)" } // 최종 상태 (보임)
     );
   });
 
