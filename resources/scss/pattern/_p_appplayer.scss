@@ -1,0 +1,52 @@
+.app-player {
+  position: relative;
+  height: 100vh;
+  background: #1e1e1e;
+  .scroll_box {
+    overflow: hidden;
+    width: 100%;
+    height: 700vh;
+    background: #1e1e1e;
+    position: relative;
+  }
+  .circle_box {
+    position: absolute;
+    width: 550px;
+    height: 550px;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+  }
+  .rotate_box {
+    position: fixed;
+    width: 400px;
+    height: 400px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+.inner_t {
+  border: 1px solid #fff;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  text-align: center;
+  color: #fff;
+  > div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+  }
+  .t__dep1 {
+  }
+  .t__dep2 {
+  }
+  .t__dep3 {
+  }
+  .t__dep4 {
+  }
+}

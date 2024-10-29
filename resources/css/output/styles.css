@@ -318,7 +318,6 @@ html,
 body {
   width: 100%;
   height: 100%;
-  overflow: hidden;
   scroll-behavior: smooth;
   font-family: "Apple SD Gothic Neo", "Pretendard Variable", Roboto, "Noto Sans KR", "Segoe UI", "Malgun Gothic", sans-serif, Poppins;
 }
@@ -1481,4 +1480,49 @@ body {
   background: linear-gradient(to left, rgba(0, 0, 0, 0.8), transparent);
 }
 
+.app-player {
+  position: relative;
+  height: 100vh;
+  background: #1e1e1e;
+}
+.app-player .scroll_box {
+  overflow: hidden;
+  width: 100%;
+  height: 700vh;
+  background: #1e1e1e;
+  position: relative;
+}
+.app-player .circle_box {
+  position: absolute;
+  width: 550px;
+  height: 550px;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0);
+}
+.app-player .rotate_box {
+  position: fixed;
+  width: 400px;
+  height: 400px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.inner_t {
+  border: 1px solid #fff;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  text-align: center;
+  color: #fff;
+}
+.inner_t > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
 /* sec01 *//*# sourceMappingURL=styles.css.map */
