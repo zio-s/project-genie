@@ -28,7 +28,7 @@
     <div class="wrap">
       <div id="header">
         <h1 class="logo">
-          <a href=""></a>
+          <a href="#s-intro"></a>
         </h1>
         <div class="menu-btn">
           <span class="blind">메뉴 닫기</span>
@@ -36,10 +36,10 @@
         </div>
         <nav id="gnb">
           <ul class="gnb__depth1">
-            <li><a href="#">인기차트</a></li>
+            <li><a href="#s-best">인기차트</a></li>
             <li><a href="#">앱 플레이어</a></li>
             <li><a href="#">최신음악</a></li>
-            <li><a href="#">뮤직 스토리</a></li>
+            <li><a href="#s-news">뮤직 스토리</a></li>
             <li><a href="#">커뮤니티</a></li>
             <li><a href="#">로그인</a></li>
           </ul>
@@ -57,7 +57,7 @@
       </div>
     </div>
     <div id="fullpage">
-      <div id="s-intro" class="section intro-sec">
+      <div data-anchors="s-intro" class="section intro-sec">
         <div class="big-logo"></div>
         <div class="small-logo"></div>
         <div class="side-box">
@@ -68,7 +68,7 @@
         </div>
         <div class="height_box"></div>
       </div>
-      <div class="section header-t sec-01">
+      <div data-anchors="s-info" class="section header-t sec-01">
         <div class="cont">
           <div class="cont-t">
             <div class="inner-txt top-t">
@@ -94,7 +94,7 @@
           </div>
         </div>
       </div>
-      <div id="s-best" class="section header-t sec-album">
+      <div data-anchors="s-best" class="section header-t sec-album">
         <div class="album-bg"></div>
         <div class="album-info">
           <h3 class="album-title">지금 가장 인기 있는<br />음악을 만나보세요!</h3>
@@ -116,38 +116,110 @@
           <!-- 앨범 아이템 -->
           <div class="album-item">
             <img src="../resources/images/music_small_1.svg" alt="앨범1" class="album-cover" />
-            <p class="album-name">Fourever</p>
-            <p class="artist-name">DAY6 (데이식스)</p>
+            <div class="item__desc">
+              <p class="desc__tit">Fourever</p>
+              <p class="desc__name">Welcome to the Show</p>
+              <p class="desc__artist">DAY6 (데이식스)</p>
+              <p class="desc__day">2024.03.18 | 싱글/EP | 7곡</p>
+              <div class="item__good">
+                <p class="good__data">3020</p>
+                <p class="good__up">공유하기</p>
+              </div>
+              <div class="item__btn">
+                <a href="#" class="btn__play">앨범 듣기</a>
+                <a href="#" class="btn__download">앨범 다운</a>
+              </div>
+            </div>
           </div>
           <div class="album-item">
             <img src="../resources/images/music_small_2.svg" alt="앨범2" class="album-cover" />
-            <p class="album-name">앨범 제목2</p>
-            <p class="artist-name">아티스트 이름2</p>
+            <div class="item__desc">
+              <p class="desc__tit">Fourever</p>
+              <p class="desc__name">Welcome to the Show</p>
+              <p class="desc__artist">DAY6 (데이식스)</p>
+              <p class="desc__day">2024.03.18 | 싱글/EP | 7곡</p>
+              <div class="item__good">
+                <p class="good__data">3020</p>
+                <p class="good__up">공유하기</p>
+              </div>
+              <div class="item__btn">
+                <a href="#" class="btn__play">앨범 듣기</a>
+                <a href="#" class="btn__download">앨범 다운</a>
+              </div>
+            </div>
           </div>
           <div class="album-item">
             <img src="../resources/images/music_small_3.svg" alt="앨범3" class="album-cover" />
-            <p class="album-name">앨범 제목2</p>
-            <p class="artist-name">아티스트 이름2</p>
+            <div class="item__desc">
+              <p class="desc__tit">Fourever</p>
+              <p class="desc__name">Welcome to the Show</p>
+              <p class="desc__artist">DAY6 (데이식스)</p>
+              <p class="desc__day">2024.03.18 | 싱글/EP | 7곡</p>
+              <div class="item__good">
+                <p class="good__data">3020</p>
+                <p class="good__up">공유하기</p>
+              </div>
+              <div class="item__btn">
+                <a href="#" class="btn__play">앨범 듣기</a>
+                <a href="#" class="btn__download">앨범 다운</a>
+              </div>
+            </div>
           </div>
           <div class="album-item">
             <img src="../resources/images/music_small_1.svg" alt="앨범4" class="album-cover" />
-            <p class="album-name">앨범 제목2</p>
-            <p class="artist-name">아티스트 이름2</p>
+            <div class="item__desc">
+              <p class="desc__tit">Fourever</p>
+              <p class="desc__name">Welcome to the Show</p>
+              <p class="desc__artist">DAY6 (데이식스)</p>
+              <p class="desc__day">2024.03.18 | 싱글/EP | 7곡</p>
+              <div class="item__good">
+                <p class="good__data">3020</p>
+                <p class="good__up">공유하기</p>
+              </div>
+              <div class="item__btn">
+                <a href="#" class="btn__play">앨범 듣기</a>
+                <a href="#" class="btn__download">앨범 다운</a>
+              </div>
+            </div>
           </div>
           <div class="album-item">
             <img src="../resources/images/music_small_2.svg" alt="앨범5" class="album-cover" />
-            <p class="album-name">앨범 제목2</p>
-            <p class="artist-name">아티스트 이름2</p>
+            <div class="item__desc">
+              <p class="desc__tit">Fourever</p>
+              <p class="desc__name">Welcome to the Show</p>
+              <p class="desc__artist">DAY6 (데이식스)</p>
+              <p class="desc__day">2024.03.18 | 싱글/EP | 7곡</p>
+              <div class="item__good">
+                <p class="good__data">3020</p>
+                <p class="good__up">공유하기</p>
+              </div>
+              <div class="item__btn">
+                <a href="#" class="btn__play">앨범 듣기</a>
+                <a href="#" class="btn__download">앨범 다운</a>
+              </div>
+            </div>
           </div>
           <div class="album-item">
             <img src="../resources/images/music_small_3.svg" alt="앨범6" class="album-cover" />
-            <p class="album-name">앨범 제목2</p>
-            <p class="artist-name">아티스트 이름2</p>
+            <div class="item__desc">
+              <p class="desc__tit">Fourever</p>
+              <p class="desc__name">Welcome to the Show</p>
+              <p class="desc__artist">DAY6 (데이식스)</p>
+              <p class="desc__day">2024.03.18 | 싱글/EP | 7곡</p>
+              <div class="item__good">
+                <p class="good__data">3020</p>
+                <p class="good__up">공유하기</p>
+              </div>
+              <div class="item__btn">
+                <a href="#" class="btn__play">앨범 듣기</a>
+                <a href="#" class="btn__download">앨범 다운</a>
+              </div>
+            </div>
           </div>
           <!-- 앨범 아이템 반복 -->
         </div>
       </div>
-      <div class="section header-t sec-news">
+      <div data-anchors="s-news" class="section header-t sec-news">
         <div class="cont cont-news">
           <div class="sound">
             <div class="sound__txt"></div>

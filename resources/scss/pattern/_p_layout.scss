@@ -514,21 +514,148 @@
 }
 
 .album-cover {
-  width: 100%;
-  object-fit: contain;
+  height: 350px;
+  object-fit: cover;
+  @include mobile {
+    height: 250px;
+  }
 }
 
-.album-name {
-  font-size: 2.5rem;
-  margin-top: 0.5rem;
-  text-align: center;
-  color: #aaa;
-}
+.item__desc {
+  padding: 20px;
+  color: #fff;
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 13px 0 13px 13px;
+  }
+  .desc__tit {
+    font-size: 2.5rem;
+    color: inherit;
+    @include mobile {
+      font-size: 1.6rem;
+    }
+  }
+  .desc__name {
+    font-size: 1.8rem;
+    color: inherit;
+    @include mobile {
+      font-size: 1.4rem;
+    }
+  }
+  .desc__artist {
+    font-size: 1.6rem;
+    color: #d8d8d8;
+    @include mobile {
+      font-size: 1.4rem;
+    }
+  }
+  .desc__day {
+    font-size: 1.4rem;
+    color: #d8d8d8;
+    @include mobile {
+      font-size: 1.2rem;
+      margin-top: 5px;
+    }
+  }
+  .item__good {
+    font-size: 1.4rem;
+    display: flex;
+    margin-left: -10px;
+    @include mobile {
+      font-size: 1.2rem;
+    }
+    p {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-right: 10px;
+      cursor: pointer;
+    }
+    .good__data {
+      &::before {
+        content: "";
+        display: block;
+        width: 40px;
+        height: 40px;
+        background: url(../../../resources/images/album-good-icon.png) no-repeat center;
+      }
+      &:hover::before {
+        background: url(../../../resources/images/album-good-icon-hover.png) no-repeat center;
+      }
+    }
+    .good__up {
+      &::before {
+        content: "";
+        display: block;
+        width: 40px;
+        height: 40px;
+        background: url(../../../resources/images/album-upload-icon.png) no-repeat center;
+      }
+      &:hover::before {
+        background: url(../../../resources/images/albim-upload-icon-hover.png) no-repeat center;
+      }
+    }
+  }
+  .item__btn {
+    font-size: 1.8rem;
+    display: flex;
+    margin-top: 5px;
+    gap: 20px;
+    @include mobile {
+      font-size: 1.6rem;
+      justify-content: center;
+    }
+    a {
+      display: flex;
+      align-items: center;
+      border: 1px solid #d8d8d8;
+      border-radius: 10px;
+      color: inherit;
+      gap: 20px;
+      padding-right: 10px;
+      &.btn__play {
+        @include mobile {
+          gap: 10px;
+        }
+        &::before {
+          content: "";
+          display: block;
+          width: 40px;
+          height: 40px;
+          background: url(../../../resources/images/album-play-btn.png) no-repeat center;
+        }
+        &:hover {
+          color: #0095ff;
+          border: 1px solid #0095ff;
+          &::before {
+            background: url(../../../resources/images/album-play-hover.png) no-repeat center;
+          }
+        }
+      }
 
-.artist-name {
-  font-size: 1.6rem;
-  color: #aaa;
-  text-align: center;
+      &.btn__download {
+        @include mobile {
+          display: none;
+        }
+        &::before {
+          content: "";
+          display: block;
+          width: 40px;
+          height: 40px;
+          background: url(../../../resources/images/album-download-btn.png) no-repeat center;
+        }
+        &:hover {
+          color: #0095ff;
+          border: 1px solid #0095ff;
+          &::before {
+            background: url(../../../resources/images/album-download-hover.png) no-repeat center;
+          }
+        }
+      }
+    }
+  }
 }
 
 .wave-container {
@@ -576,6 +703,9 @@
   transform-origin: bottom;
   background: #0095ff;
   flex-shrink: 0;
+  @include mobile {
+    border-radius: 5px;
+  }
 }
 .wave-dim {
   position: absolute;

@@ -4,9 +4,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // Fullpage.js 초기화
   new fullpage("#fullpage", {
     autoScrolling: true,
-    navigation: true,
+    navigation: false,
     scrollOverflow: true, // 스크롤 가능한 컨텐츠 허용
     fitToSection: false,
+    anchors: ["s-intro", "s-info", "s-best", "s-news"],
     easingcss3: "cubic-bezier(0.76, 0, 0.24, 1)",
     scrollingSpeed: 1250,
     touchSensitivity: 0.01,
@@ -19,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (destination.index !== 0) {
         gsap.to(header, { top: "0", duration: 0.6 });
       }
+      ScrollTrigger.refresh();
     },
 
     afterLoad: (origin, destination) => {
@@ -27,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (destination.index === 0) {
         gsap.to(header, { top: "-100px", duration: 0.1 });
       }
-      // ScrollTrigger.refresh();
+      // history.replaceState(null, null, " ");
     },
   });
 
@@ -142,7 +144,7 @@ document.addEventListener("DOMContentLoaded", () => {
         scroller: albumS,
         start: "top 90%", // 앨범 리스트가 80%에 도달할 때 시작
         end: "top 70%", // 앨범 리스트가 20%에 도달할 때 종료
-        scrub: 4,
+        scrub: 2,
         onEnter: () => {
           // 새로운 배경 이미지 설정
           if (previousSrc.length === 0) {
@@ -170,11 +172,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // 애니메이션 정의
+    // 애니메이션: 아이템이 중앙에 있을 때 멈추는 효과
     tl.fromTo(
       item,
-      { y: 20, scale: 0.2 },
-      { y: 0, scale: 1, duration: 1, ease: "cubic-bezier(0.45, 0, 0.55, 1)" } // 최종 상태 (보임)
-    );
+      { y: 100, scale: 0.5 },
+      {
+        y: 0,
+        scale: 1,
+        duration: 2, // 부드러운 애니메이션 시간
+        ease: "power2.out", // 천천히 멈추는 느낌
+      }
+    ).to(item, {
+      scale: 1.1,
+      duration: 1, // 잠시 커지는 느낌 주기
+      ease: "linear",
+      repeat: 2, // 반복해서 커졌다 줄어들게 함
+      yoyo: true, // 원래 크기로 돌아가기
+    });
   });
 
   // wave 애니메이션
