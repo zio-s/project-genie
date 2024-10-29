@@ -4,4 +4,4 @@
   ___
 
   ### intro
-  
+  <img src="![intro_visual](https://github.com/user-attachments/assets/f16502c5-1d82-4e14-9408-6243ae023520)">
