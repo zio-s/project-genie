@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (destination.index === 0) {
         gsap.to(header, { top: "-100px", duration: 0.1 });
       }
-      // history.replaceState(null, null, " ");
+      history.replaceState(null, null, " ");
     },
   });
 
