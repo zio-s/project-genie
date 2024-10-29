@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- fullpage js -->
+    <link rel="stylesheet" href="../resources/js/pattern/lib/fullpage.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- <link rel="stylesheet" href="./css/style-test.css" /> -->
+    <link rel="stylesheet" type="text/css" href="../resources/css/pattern_css.css" />
+
+    <!-- gsap js -->
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- <script src="../resources/js/pattern/swiper.js"></script> -->
+    <!-- <script src="../resources/js/pattern/lib/fullpage.js"></script> -->
+    <!-- <script src="../resources/js/pattern/gsap.js"></script> -->
+    <script defer src="../resources/js/component/script.js"></script>
+
+    <title>genie</title>
+  </head>
+  <body>
+    <!-- fullpage -->
+    <div class="wrap">
+      <div id="header">
+        <h1 class="logo">
+          <a href="#s-intro"></a>
+        </h1>
+        <div class="menu-btn">
+          <span class="blind">메뉴 닫기</span>
+          <div></div>
+        </div>
+        <nav id="gnb">
+          <ul class="gnb__depth1">
+            <li><a href="#s-best">인기차트</a></li>
+            <li><a href="#">앱 플레이어</a></li>
+            <li><a href="#">최신음악</a></li>
+            <li><a href="#s-news">뮤직 스토리</a></li>
+            <li><a href="#">커뮤니티</a></li>
+            <li><a href="#">로그인</a></li>
+          </ul>
+        </nav>
+        <nav id="m-gnb">
+          <ul class="gnb__depth1">
+            <li><a href="#">인기차트</a></li>
+            <li><a href="#">앱 플레이어</a></li>
+            <li><a href="#">최신음악</a></li>
+            <li><a href="#">뮤직 스토리</a></li>
+            <li><a href="#">커뮤니티</a></li>
+            <li id="login"><a href="#">로그인</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="section app-player">
+      <div class="scroll_box">
+        <div class="rotate_box">
+          <div class="circle_box">
+            <img src="../resources/images/appplayer-images/circle-item.png" alt="" />
+          </div>
+        </div>
+        <div class="inner_t">
+          <div class="circle_small">
+            <div class="circle">
+              <img src="../resources/images/appplayer-images/circle_small.png" alt="원형이미지" />
+            </div>
+          </div>
+          <div class="t__dep1">
+            <em>음악이 있는 일상</em>
+            <p>모든 감정을<br />음악으로 표현하고</p>
+          </div>
+          <div class="t__dep2">
+            <p>매일 새로운 음악과 함께,<br />플레이리스트로 감성을 채워보세요.</p>
+          </div>
+          <div class="circle_large">
+            <div class="circle_large">
+              <img src="../resources/images/appplayer-images/circle_large.png" alt="원형이미지" />
+            </div>
+          </div>
+          <div class="t__dep3">
+            <p>당신의 모든 순간을 위한<br />사운드트랙.</p>
+          </div>
+          <div class="t__dep4">
+            <p>당신만의 음악 여정을 시작하세요.<br /><em>지니</em>가 함께합니다, 언제 어디서나.</p>
+          </div>
+        </div>
+        <div class="video_t">
+          <div class="video_item"></div>
+          <div class="video_txt">
+            <p>
+              음악 이젠
+              <br />
+              <em>지니뮤직</em>으로!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
