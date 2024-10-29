@@ -292,9 +292,6 @@
     font-size: 2rem;
   }
 }
-.top-t {
-  flex: 1;
-}
 .inner-txt p {
   line-height: 1;
 }
@@ -314,9 +311,15 @@
 }
 .inner-txt.active .top_txt {
   transform: scale(1.6);
+  @include mobile {
+    transform: scale(2);
+  }
 }
 .inner-txt.active .bottom_txt {
   transform: scale(1.6);
+  @include mobile {
+    transform: scale(2);
+  }
 }
 
 .inner-txt .bottom_txt {
@@ -343,8 +346,19 @@
     width: 100%;
     height: 100%;
     left: -35%;
-    bottom: -2%;
+    bottom: 20%;
     background: url(../../../resources/images/blue-cle.svg) no-repeat -10% 100% / contain;
+    transform-origin: center;
+    transform: scale(1);
+    animation: aniScale 2s infinite alternate ease-in-out;
+  }
+  @keyframes aniScale {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.3);
+    }
   }
 }
 .movie-item {
