@@ -111,12 +111,12 @@ const scrollBox = document.querySelector(".scroll_box");
 const innerBox = document.querySelector(".inner_t");
 const tDeps = gsap.utils.toArray(".inner_t > div");
 
-// gsap.to(rotateBox, {
-//   rotation: 360, // 360도 회전
-//   duration: 10, // 회전 애니메이션 지속 시간
-//   repeat: -1, // 무한 반복
-//   ease: "none", // 매끄럽게 회전
-// });
+gsap.to(rotateBox, {
+  rotation: 360, // 360도 회전
+  duration: 70, // 회전 애니메이션 지속 시간
+  repeat: -1, // 무한 반복
+  ease: "none", // 매끄럽게 회전
+});
 
 // // 1. circleBox 애니메이션 타임라인
 // const circleBoxTimeline = gsap.timeline({
@@ -169,22 +169,49 @@ const tDeps = gsap.utils.toArray(".inner_t > div");
 // });
 
 const tl = gsap.timeline();
-// tl.addLabel("scroll");
-tl.to(".t__dep1", { opacity: 1, scale: 1 })
-  .to(".circle_box", { opacity: 1, scale: 1, duration: 1 }) // 보이게 함
-  .fromTo(".circle_box", { scale: 1, duration: 1 }, { scale: 0 }, ">1") // 바로 사라짐
-  .to(".t__dep1", { opacity: 0, scale: 0 }, ">")
-  .set(".circle_small", { opacity: 0, scale: 0 }, ">")
-  .to(".circle_small", { opacity: 1, scale: 1 })
-  .fromTo(".t__dep2", { opacity: 0, scale: 1.5 }, { opacity: 1, scale: 1, duration: 2 }, "<")
-  .fromTo(".circle_small", { rotation: 360 }, { rotation: 380 }, ">");
+tl.addLabel("scroll");
+tl.set(".t__dep1", { opacity: 1, scale: 1 })
+  .fromTo(".circle_box", { scale: 1, opacity: 1, rotation: 0 }, { scale: 0, opacity: 0, rotation: 180 }, ">") // 바로 사라짐
+  .to(".t__dep1", { opacity: 0, scale: 0 }, "<0.2")
+  .set(".circle_small", { opacity: 0, scale: 0 }, "<")
+  .to(".circle_small", { opacity: 1, scale: 1 }, "<0.3")
+  .to(".t__dep2", { opacity: 1, scale: 1 }, "<")
+  .fromTo(".circle_small .circle img", { rotation: 340 }, { rotation: 360 }, ">")
+  .to(".item__img", { opacity: 1 }, ">1")
+  .fromTo(".item__img", { scale: 0.8 }, { scale: 1 }, ">")
+  .to(".t__dep2", { opacity: 0, scale: 0 }, ">1")
+  // .to(".t__dep3", { opacity: 1, scale: 1 }, ">")
+  .to(".item__img", { opacity: 0 }, ">")
+  .fromTo(
+    ".circle_small .circle img",
+    { rotation: 360, scale: 1, duration: 5 },
+    { rotation: 400, scale: 0.7, duration: 5 },
+    ">"
+  )
+  .set(".circle_large", { opacity: 0, scale: 0 }, "<")
+  .to(".circle_large", { opacity: 1, scale: 1.1, duration: 2 }, "<")
+  .set(".t__dep3", { scale: 0 }, "<")
+  .to(".t__dep3", { opacity: 1, scale: 1, duration: 6 }, "<")
+
+  .to(".t__dep3", { opacity: 0, scale: 0 }, ">1")
+  .to(".circle_large", { scale: 2, opacity: 1, rotation: 20, duration: 8 }, ">")
+  .to(".t__dep4", { opacity: 1, scale: 1, duration: 10 }, "<")
+  .fromTo(".video_item", { opacity: 0 }, { opacity: 1 }, ">")
+  .to(".t__dep4", { opacity: 0, scale: 0, duration: 5 }, ">2.5")
+  .to(".circle_small", { opacity: 0, scale: 0, duration: 8 }, "<")
+  .to(".circle_large", { scale: 0, opacity: 0, rotation: 0, duration: 8 }, "<")
+  .to(".video_txt", { opacity: 1, duration: 10 }, "<1.5")
+  .to(".bg_dim", { opacity: 0.8, scale: 6, duration: 20 }, ">1")
+  .to(".app_logo", { opacity: 1, duration: 8 }, ">")
+  .to(".app_download", { opacity: 1, duration: 8 }, "<");
 
 // .to(".t__dep1", { opacity: 1, scale: 1 });
 
 ScrollTrigger.create({
   animation: tl,
   trigger: ".scroll_box",
-  start: "top center",
-  end: "+=100%",
-  scrub: 1,
+  start: "top top",
+  end: "+=1000",
+  scrub: 2.5,
+  markers: true, // 디버그용 마커 표시
 });

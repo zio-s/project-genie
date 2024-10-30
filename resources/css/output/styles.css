@@ -1492,7 +1492,16 @@ body {
   background: #1e1e1e;
   position: relative;
 }
-.app-player .circle_box {
+.app-player .rotate_box {
+  position: fixed;
+  z-index: 2;
+  width: 400px;
+  height: 400px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.app-player .rotate_box .circle_box {
   position: absolute;
   width: 550px;
   height: 550px;
@@ -1501,22 +1510,15 @@ body {
   top: 50%;
   transform: translate(-50%, -50%) scale(0);
 }
-.app-player .rotate_box {
-  position: fixed;
-  width: 400px;
-  height: 400px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
 
 .inner_t {
-  border: 1px solid #fff;
   width: 100%;
   height: 100vh;
   position: fixed;
   text-align: center;
+  z-index: 2;
   color: #fff;
+  font-size: 2.5vw;
 }
 .inner_t > div {
   position: absolute;
@@ -1525,4 +1527,100 @@ body {
   transform: translate(-50%, -50%);
   opacity: 0;
 }
+.inner_t .t__dep1 em {
+  font-size: 2rem;
+  color: #0095ff;
+}
+.inner_t .circle {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.inner_t .circle_item {
+  opacity: 1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.inner_t .circle_item .item__img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 10vw;
+  opacity: 0;
+}
+.inner_t .circle_item .item__img.item__1 {
+  top: 84%;
+  left: 79%;
+}
+.inner_t .circle_item .item__img.item__2 {
+  top: 16%;
+  left: 21%;
+}
+
+.video_t {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  font-size: 2.5vw;
+}
+.video_t .video_item {
+  opacity: 0;
+}
+.video_t .video_dim {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.video_t .video_dim .bg_dim {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  width: 20vw;
+  height: 20vw;
+  background: #1e1e1e;
+  opacity: 0.8;
+  border-radius: 50%;
+  opacity: 0;
+}
+.video_t .video_dim .app_logo {
+  position: absolute;
+  z-index: 2;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+.video_t .video_dim .app_download {
+  position: absolute;
+  z-index: 2;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+.video_t .video_txt {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  color: #fff;
+  text-align: center;
+}
+.video_t .video_txt em {
+  font-weight: 800;
+  color: #0095ff;
+}
+
 /* sec01 *//*# sourceMappingURL=styles.css.map */
