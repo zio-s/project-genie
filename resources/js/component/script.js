@@ -167,21 +167,20 @@ gsap.to(rotateBox, {
 //     );
 //   }
 // });
-
 const tl = gsap.timeline();
 tl.addLabel("scroll");
 tl.set(".t__dep1", { opacity: 1, scale: 1 })
-  .fromTo(".circle_box", { scale: 1, opacity: 1, rotation: 0 }, { scale: 0, opacity: 0, rotation: 180 }, ">") // 바로 사라짐
-  .to(".t__dep1", { opacity: 0, scale: 0 }, "<0.2")
+  .fromTo(".circle_box", { scale: 1, opacity: 1, rotation: 0 }, { scale: 0, opacity: 0, rotation: 180 }, ">")
+  .to(".t__dep1", { opacity: 0, scale: 0, duration: 2 }, "<")
   .set(".circle_small", { opacity: 0, scale: 0 }, "<")
-  .to(".circle_small", { opacity: 1, scale: 1 }, "<0.3")
-  .to(".t__dep2", { opacity: 1, scale: 1 }, "<")
-  .fromTo(".circle_small .circle img", { rotation: 340 }, { rotation: 360 }, ">")
-  .to(".item__img", { opacity: 1 }, ">1")
-  .fromTo(".item__img", { scale: 0.8 }, { scale: 1 }, ">")
-  .to(".t__dep2", { opacity: 0, scale: 0 }, ">1")
+  .to(".circle_small", { opacity: 1, scale: 1, duration: 2 }, "<0.3")
+  .to(".t__dep2", { opacity: 1, scale: 1, duration: 5 }, "<")
+  .fromTo(".circle_small .circle img", { rotation: 340 }, { rotation: 360 }, ">1")
+  .to(".item__img", { opacity: 1, duration: 1 }, ">1")
+  .fromTo(".item__img", { scale: 0.8 }, { scale: 1 }, ">1.5")
+  .to(".item__img", { opacity: 0, duration: 5 }, ">1.5")
+  .to(".t__dep2", { opacity: 0, scale: 0 }, ">2.5")
   // .to(".t__dep3", { opacity: 1, scale: 1 }, ">")
-  .to(".item__img", { opacity: 0 }, ">")
   .fromTo(
     ".circle_small .circle img",
     { rotation: 360, scale: 1, duration: 5 },
@@ -202,16 +201,25 @@ tl.set(".t__dep1", { opacity: 1, scale: 1 })
   .to(".circle_large", { scale: 0, opacity: 0, rotation: 0, duration: 8 }, "<")
   .to(".video_txt", { opacity: 1, duration: 10 }, "<1.5")
   .to(".bg_dim", { opacity: 0.8, scale: 6, duration: 20 }, ">1")
-  .to(".app_logo", { opacity: 1, duration: 8 }, ">")
-  .to(".app_download", { opacity: 1, duration: 8 }, "<");
+  .set(".app_logo", { y: -50 }, "<")
+  .set(".app_download", { y: 50 }, "<")
+  .to(".app_logo", { opacity: 1, duration: 8, y: 0 }, ">")
+  .to(".app_download", { opacity: 1, duration: 8, y: 0 }, "<")
+
+  .to("#footer", { y: -200, duration: 10 });
 
 // .to(".t__dep1", { opacity: 1, scale: 1 });
-
 ScrollTrigger.create({
   animation: tl,
   trigger: ".scroll_box",
   start: "top top",
-  end: "+=1000",
+  end: "+=700",
   scrub: 2.5,
-  markers: true, // 디버그용 마커 표시
+  onUpdate: (self) => {
+    const progress = self.progress.toFixed(2);
+    console.log(`스크롤 진행률: ${progress * 100}%`);
+    if (progress > 1) {
+      tl.pause(); // 특정 지점에서 애니메이션 일시 정지
+    }
+  },
 });
