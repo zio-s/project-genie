@@ -227,12 +227,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const scrolling = document.querySelector(".app-player .fp-overflow");
   const scrollBox = document.querySelector(".scroll_box");
   const rotateBox = document.querySelector(".rotate_box");
-  gsap.to(rotateBox, {
-    rotation: 360, // 360도 회전
-    duration: 70, // 회전 애니메이션 지속 시간
-    repeat: -1, // 무한 반복
-    ease: "none", // 매끄럽게 회전
-  });
+  // gsap.to(rotateBox, {
+  //   rotation: 360, // 360도 회전
+  //   duration: 70, // 회전 애니메이션 지속 시간
+  //   repeat: -1, // 무한 반복
+  //   ease: "none", // 매끄럽게 회전
+  // });
 
   const tl2 = gsap.timeline();
   tl2.addLabel("scroll");
@@ -274,7 +274,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .to(".app_logo", { opacity: 1, duration: 8, y: 0 }, ">")
     .to(".app_download", { opacity: 1, duration: 8, y: 0 }, "<")
 
-    .to("#footer", { y: -200, duration: 10 });
+    .to("#footer", { y: 200, duration: 10 });
 
   // .to(".t__dep1", { opacity: 1, scale: 1 });
 

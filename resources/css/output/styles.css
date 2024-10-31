@@ -1513,52 +1513,52 @@ body {
 }
 
 .music .bar:nth-child(1) {
-  background: purple;
+  background: #007acc; /* 어두운 블루 */
   animation-delay: 1s;
 }
 
 .music .bar:nth-child(2) {
-  background: crimson;
+  background: #008bde; /* 약간 더 밝은 블루 */
   animation-delay: 0.8s;
 }
 
 .music .bar:nth-child(3) {
-  background: deeppink;
+  background: #0095ff; /* 기준 색상 */
   animation-delay: 0.6s;
 }
 
 .music .bar:nth-child(4) {
-  background: orange;
+  background: #00a3ff; /* 기준 색보다 밝은 블루 */
   animation-delay: 0.4s;
 }
 
 .music .bar:nth-child(5) {
-  background: gold;
+  background: #33b5ff; /* 밝은 블루 */
   animation-delay: 0.2s;
 }
 
 .music .bar:nth-child(6) {
-  background: gold;
+  background: #33b5ff; /* 밝은 블루 */
   animation-delay: 0.2s;
 }
 
 .music .bar:nth-child(7) {
-  background: orange;
+  background: #00a3ff; /* 기준 색보다 밝은 블루 */
   animation-delay: 0.4s;
 }
 
 .music .bar:nth-child(8) {
-  background: deeppink;
+  background: #0095ff; /* 기준 색상 */
   animation-delay: 0.6s;
 }
 
 .music .bar:nth-child(9) {
-  background: crimson;
+  background: #008bde; /* 약간 더 밝은 블루 */
   animation-delay: 0.8s;
 }
 
 .music .bar:nth-child(10) {
-  background: purple;
+  background: #007acc; /* 어두운 블루 */
   animation-delay: 1s;
 }
 
@@ -1601,16 +1601,22 @@ body {
 .app-player .rotate_box {
   position: absolute;
   z-index: 2;
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
+@media (min-width: 600px) {
+  .app-player .rotate_box {
+    width: 400px;
+    height: 400px;
+  }
+}
 .app-player .rotate_box .circle_box {
   position: absolute;
-  width: 550px;
-  height: 550px;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
   left: 50%;
   top: 50%;
@@ -1702,12 +1708,18 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
-  width: 20vw;
-  height: 20vw;
+  width: 30vw;
+  height: 30vw;
   background: #1e1e1e;
   opacity: 0.8;
   border-radius: 50%;
   opacity: 0;
+}
+@media (min-width: 600px) {
+  .video_t .video_dim .bg_dim {
+    width: 30vw;
+    height: 30vw;
+  }
 }
 .video_t .video_dim .app_logo {
   position: absolute;
@@ -1721,12 +1733,16 @@ body {
 }
 .video_t .video_dim .app_download {
   position: absolute;
-  z-index: 2;
+  width: 100%;
   top: 70%;
   left: 50%;
+  z-index: 2;
+  text-align: center;
   transform: translate(-50%, -50%);
   opacity: 0;
   pointer-events: visible;
+}
+.video_t .video_dim .app_download img {
   cursor: pointer;
 }
 .video_t .video_txt {

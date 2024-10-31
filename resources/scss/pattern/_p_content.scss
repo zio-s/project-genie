@@ -91,43 +91,43 @@
   animation: loader 1.5s ease-in-out infinite;
 }
 .music .bar:nth-child(1) {
-  background: purple;
+  background: #007acc; /* 어두운 블루 */
   animation-delay: 1s;
 }
 .music .bar:nth-child(2) {
-  background: crimson;
+  background: #008bde; /* 약간 더 밝은 블루 */
   animation-delay: 0.8s;
 }
 .music .bar:nth-child(3) {
-  background: deeppink;
+  background: #0095ff; /* 기준 색상 */
   animation-delay: 0.6s;
 }
 .music .bar:nth-child(4) {
-  background: orange;
+  background: #00a3ff; /* 기준 색보다 밝은 블루 */
   animation-delay: 0.4s;
 }
 .music .bar:nth-child(5) {
-  background: gold;
+  background: #33b5ff; /* 밝은 블루 */
   animation-delay: 0.2s;
 }
 .music .bar:nth-child(6) {
-  background: gold;
+  background: #33b5ff; /* 밝은 블루 */
   animation-delay: 0.2s;
 }
 .music .bar:nth-child(7) {
-  background: orange;
+  background: #00a3ff; /* 기준 색보다 밝은 블루 */
   animation-delay: 0.4s;
 }
 .music .bar:nth-child(8) {
-  background: deeppink;
+  background: #0095ff; /* 기준 색상 */
   animation-delay: 0.6s;
 }
 .music .bar:nth-child(9) {
-  background: crimson;
+  background: #008bde; /* 약간 더 밝은 블루 */
   animation-delay: 0.8s;
 }
 .music .bar:nth-child(10) {
-  background: purple;
+  background: #007acc; /* 어두운 블루 */
   animation-delay: 1s;
 }
 
