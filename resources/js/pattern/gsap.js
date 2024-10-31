@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     navigation: false,
     scrollOverflow: true, // 스크롤 가능한 컨텐츠 허용
     fitToSection: false,
-    anchors: ["s-intro", "s-info", "s-best", "s-news"],
+    anchors: ["s-intro", "s-info", "s-best", "s-news", "s-app"],
     easingcss3: "cubic-bezier(0.76, 0, 0.24, 1)",
     scrollingSpeed: 1250,
     touchSensitivity: 0.01,
@@ -226,13 +226,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const scrolling = document.querySelector(".app-player .fp-overflow");
   const scrollBox = document.querySelector(".scroll_box");
-
-  // gsap.to(rotateBox, {
-  //   rotation: 360, // 360도 회전
-  //   duration: 70, // 회전 애니메이션 지속 시간
-  //   repeat: -1, // 무한 반복
-  //   ease: "none", // 매끄럽게 회전
-  // });
+  const rotateBox = document.querySelector(".rotate_box");
+  gsap.to(rotateBox, {
+    rotation: 360, // 360도 회전
+    duration: 70, // 회전 애니메이션 지속 시간
+    repeat: -1, // 무한 반복
+    ease: "none", // 매끄럽게 회전
+  });
 
   const tl2 = gsap.timeline();
   tl2.addLabel("scroll");
@@ -272,9 +272,9 @@ document.addEventListener("DOMContentLoaded", () => {
     .set(".app_logo", { y: -50 }, "<")
     .set(".app_download", { y: 50 }, "<")
     .to(".app_logo", { opacity: 1, duration: 8, y: 0 }, ">")
-    .to(".app_download", { opacity: 1, duration: 8, y: 0 }, "<");
+    .to(".app_download", { opacity: 1, duration: 8, y: 0 }, "<")
 
-  // .to("#footer", { y: -200, duration: 10 });
+    .to("#footer", { y: -200, duration: 10 });
 
   // .to(".t__dep1", { opacity: 1, scale: 1 });
 
