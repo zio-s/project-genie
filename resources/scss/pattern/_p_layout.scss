@@ -122,6 +122,9 @@
         line-height: 73px;
         padding: 0 20px;
         color: #5e5e5e;
+        &.active {
+          color: #0095ff;
+        }
         &:hover {
           font-weight: 800;
           color: #0095ff;
