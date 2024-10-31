@@ -23,9 +23,8 @@ document.addEventListener("DOMContentLoaded", () => {
       ScrollTrigger.refresh();
     },
 
-    afterLoad: (origin, destination) => {
+    afterLoad: (origin, destination, direction) => {
       const header = document.querySelector("#header");
-
       if (destination.index === 0) {
         gsap.to(header, { top: "-100px", duration: 0.1 });
       }
@@ -56,7 +55,11 @@ document.addEventListener("DOMContentLoaded", () => {
       start: "top top",
       end: "bottom -100%",
       scrub: 1,
-      animation: gsap.fromTo(bigLogo, { rotate: -400, scale: 2.5, ease: "linear" }, { rotate: 0, scale: 1, duration: 3, ease: "linear" }),
+      animation: gsap.fromTo(
+        bigLogo,
+        { rotate: -400, scale: 2.5, ease: "linear" },
+        { rotate: 0, scale: 1, duration: 3, ease: "linear" }
+      ),
     });
 
     // Small Logo 애니메이션 ScrollTrigger
@@ -220,6 +223,70 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
+
+  const scrolling = document.querySelector(".app-player .fp-overflow");
+  const scrollBox = document.querySelector(".scroll_box");
+
+  // gsap.to(rotateBox, {
+  //   rotation: 360, // 360도 회전
+  //   duration: 70, // 회전 애니메이션 지속 시간
+  //   repeat: -1, // 무한 반복
+  //   ease: "none", // 매끄럽게 회전
+  // });
+
+  const tl2 = gsap.timeline();
+  tl2.addLabel("scroll");
+  tl2
+    .set(".t__dep1", { opacity: 1, scale: 1 })
+    .fromTo(
+      ".circle_box",
+      { scale: 1, opacity: 1, rotation: 0 },
+      { scale: 0, opacity: 0, rotation: 180, duration: 7 }, // duration 증가
+      ">1"
+    )
+    .to(".t__dep1", { opacity: 0, scale: 0, duration: 4 }, "<") // 지속 시간 증가
+    .set(".circle_small", { opacity: 0, scale: 0 }, "<")
+    .to(".circle_small", { opacity: 1, scale: 1, duration: 6 }, ">1") // 딜레이 조정 및 지속 시간 증가
+    .set(".t__dep2", { opacity: 0, scale: 0 }, "<")
+    .to(".t__dep2", { opacity: 1, scale: 1, duration: 6 }, "<") // 지속 시간 증가
+    .fromTo(".circle_small .circle img", { rotation: 340 }, { rotation: 360, duration: 4 }, ">1")
+    .to(".item__img", { opacity: 1, duration: 2 }, ">1.5") // 지속 시간 증가
+    .to(".item__img", { opacity: 0, duration: 7 }, ">1.5") // 지속 시간 증가
+    .to(".t__dep2", { opacity: 0, scale: 0, duration: 2 }, ">2")
+    .fromTo(".circle_small .circle img", { rotation: 360, scale: 1 }, { rotation: 400, scale: 0.7, duration: 7 }, ">")
+    .set(".circle_large", { opacity: 0, scale: 0 }, "<")
+    .to(".circle_large", { opacity: 1, scale: 1, duration: 4 }, "<")
+    .set(".t__dep3", { scale: 0 }, "<")
+    .to(".t__dep3", { opacity: 1, scale: 1, duration: 8 }, "<") // 지속 시간 증가
+    .to(".t__dep3", { opacity: 0, scale: 0, duration: 4 }, ">3")
+    .to(".circle_large", { scale: 1.5, opacity: 1, rotation: 30, duration: 10 }, ">1") // 지속 시간 증가
+    .to(".circle_small", { scale: 1.27, opacity: 1, rotation: 50, duration: 10 }, "<") // 지속 시간 증가
+    .to(".t__dep4", { opacity: 1, scale: 1, duration: 12 }, "<1") // 지속 시간 증가
+    .fromTo(".video_item", { opacity: 0 }, { opacity: 1, duration: 5 }, ">") // 애니메이션 속도 조정
+    .to(".t__dep4", { opacity: 0, scale: 0, duration: 7 }, ">3")
+    .to(".circle_small", { opacity: 0, scale: 0, duration: 20 }, "<")
+    .to(".circle_large", { scale: 0, opacity: 0, rotation: 0, duration: 25 }, "<") // 지속 시간 증가
+    .to(".video_txt", { opacity: 1, duration: 10 }, "<")
+    // .to(".bg_dim", { opacity: 0.8, scale: 8, duration: 12 }, ">1.5")
+    .fromTo(".bg_dim", { opacity: 1, scale: 0, duration: 12 }, { opacity: 0.8, scale: 8, duration: 12 }, ">1.5")
+    .set(".app_logo", { y: -50 }, "<")
+    .set(".app_download", { y: 50 }, "<")
+    .to(".app_logo", { opacity: 1, duration: 8, y: 0 }, ">")
+    .to(".app_download", { opacity: 1, duration: 8, y: 0 }, "<");
+
+  // .to("#footer", { y: -200, duration: 10 });
+
+  // .to(".t__dep1", { opacity: 1, scale: 1 });
+
+  ScrollTrigger.create({
+    animation: tl2,
+    scroller: scrolling,
+    trigger: scrollBox,
+    start: "top top",
+    end: "bottom -200%",
+    scrub: 2.5,
+    ease: "linear",
+  });
 
   window.addEventListener("resize", () => {
     const introSection = document.querySelector(".intro-sec");

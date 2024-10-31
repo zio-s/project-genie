@@ -3,13 +3,12 @@ html,
 body {
   width: 100%;
   height: 100%;
-  // overflow: hidden;
   scroll-behavior: smooth;
-  font-family: "Apple SD Gothic Neo", "Pretendard Variable", Roboto, "Noto Sans KR", "Segoe UI", "Malgun Gothic", sans-serif, Poppins;
+  font-family: "Apple SD Gothic Neo", "Pretendard Variable", Roboto, "Noto Sans KR", "Segoe UI", "Malgun Gothic",
+    sans-serif, Poppins;
 }
 
 #fullpage .section {
-  overflow: hidden;
   height: 100vh;
   position: relative;
   background-color: #1e1e1e;

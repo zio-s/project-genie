@@ -1,25 +1,33 @@
-#header {
-  top: 0;
+// #header {
+//   top: 0;
+// }
+// #footer {
+//   position: fixed;
+//   bottom: -200px;
+//   z-index: 3;
+// }
+.app-player .fp-overflow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-#footer {
-  position: fixed;
-  bottom: -200px;
-  z-index: 3;
+.app-player .height_box {
+  height: 800vh;
 }
 .app-player {
-  position: relative;
-  height: 100vh;
   background: #1e1e1e;
   .scroll_box {
-    overflow: hidden;
     width: 100%;
-    height: 200vh;
+    right: 0;
+    height: 100%;
+    z-index: 1000;
     background: #1e1e1e;
-    position: relative;
+    position: absolute;
+    pointer-events: none;
   }
 
   .rotate_box {
-    position: fixed;
+    position: absolute;
     z-index: 2;
     width: 400px;
     height: 400px;
@@ -28,7 +36,6 @@
     transform: translate(-50%, -50%);
     .circle_box {
       position: absolute;
-
       width: 550px;
       height: 550px;
       border-radius: 50%;
@@ -42,11 +49,12 @@
 .inner_t {
   width: 100%;
   height: 100vh;
-  position: fixed;
+  position: absolute;
   text-align: center;
   z-index: 2;
   color: #fff;
   font-size: 2.5vw;
+  pointer-events: none;
   > div {
     position: absolute;
     top: 50%;
@@ -101,13 +109,26 @@
   }
 }
 .video_t {
-  position: fixed;
+  position: absolute;
   z-index: 1;
   width: 100%;
   height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   font-size: 2.5vw;
+  z-index: -3000;
+  pointer-events: none;
   .video_item {
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
     opacity: 0;
+
+    video {
+    }
   }
   .video_dim {
     position: absolute;
@@ -135,6 +156,8 @@
       left: 50%;
       transform: translate(-50%, -50%);
       opacity: 0;
+      pointer-events: visible;
+      cursor: pointer;
     }
     .app_download {
       position: absolute;
@@ -143,6 +166,8 @@
       left: 50%;
       transform: translate(-50%, -50%);
       opacity: 0;
+      pointer-events: visible;
+      cursor: pointer;
     }
   }
 
