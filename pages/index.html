@@ -27,6 +27,20 @@
     <title>genie</title>
   </head>
   <body>
+    <div class="loading">
+      <div class="music">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+    </div>
     <!-- fullpage -->
     <div class="wrap">
       <div id="header">
@@ -40,7 +54,7 @@
         <nav id="gnb">
           <ul class="gnb__depth1">
             <li><a href="#s-best">인기차트</a></li>
-            <li><a href="appplayer.html">앱 플레이어</a></li>
+            <li><a href="#s-app">앱 플레이어</a></li>
             <li><a href="#">최신음악</a></li>
             <li><a href="#s-news">뮤직 스토리</a></li>
             <li><a href="#">커뮤니티</a></li>
@@ -49,10 +63,10 @@
         </nav>
         <nav id="m-gnb">
           <ul class="gnb__depth1">
-            <li><a href="#">인기차트</a></li>
-            <li><a href="appplayer.html">앱 플레이어</a></li>
+            <li><a href="#s-best">인기차트</a></li>
+            <li><a href="#s-app">앱 플레이어</a></li>
             <li><a href="#">최신음악</a></li>
-            <li><a href="#">뮤직 스토리</a></li>
+            <li><a href="#s-news">뮤직 스토리</a></li>
             <li><a href="#">커뮤니티</a></li>
             <li id="login"><a href="#">로그인</a></li>
           </ul>
@@ -342,22 +356,8 @@
             <div class="swiper-pagination"></div>
           </div>
         </div>
-        <footer id="footer">
-          <div class="f_logo">
-            <p><span class="blind">logo</span></p>
-          </div>
-          <div class="copy">
-            <p>본 홈페이지는 상업용 목적이 아닌 개인 포트폴리오 입니다.</p>
-            <p>COPYRIGHT&copy;GENIE MUSIC CORP ALL RIGHTS RESERVED.</p>
-          </div>
-          <div class="sns">
-            <a href="#" class="tw"><span class="blind">twi</span></a>
-            <a href="#" class="ig"><span class="blind">instagram</span></a>
-            <a href="#" class="yt"><span class="blind">youtube</span></a>
-          </div>
-        </footer>
       </div>
-      <div class="section app-player">
+      <div data-anchors="s-app" class="section app-player">
         <div class="scroll_box">
           <div class="rotate_box">
             <div class="circle_box">
@@ -424,6 +424,20 @@
           </div>
         </div>
         <div class="height_box"></div>
+        <footer id="footer">
+          <div class="f_logo">
+            <p><span class="blind">logo</span></p>
+          </div>
+          <div class="copy">
+            <p>본 홈페이지는 상업용 목적이 아닌 개인 포트폴리오 입니다.</p>
+            <p>COPYRIGHT&copy;GENIE MUSIC CORP ALL RIGHTS RESERVED.</p>
+          </div>
+          <div class="sns">
+            <a href="#" class="tw"><span class="blind">twi</span></a>
+            <a href="#" class="ig"><span class="blind">instagram</span></a>
+            <a href="#" class="yt"><span class="blind">youtube</span></a>
+          </div>
+        </footer>
       </div>
     </div>
   </body>
