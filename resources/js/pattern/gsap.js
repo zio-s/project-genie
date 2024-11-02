@@ -274,7 +274,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .to(".app_logo", { opacity: 1, duration: 8, y: 0 }, ">")
     .to(".app_download", { opacity: 1, duration: 8, y: 0 }, "<")
 
-    .to("#footer", { y: 200, duration: 10 });
+    .to("#footer", { bottom: "0", duration: 10 });
 
   // .to(".t__dep1", { opacity: 1, scale: 1 });
 

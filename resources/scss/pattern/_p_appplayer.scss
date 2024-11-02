@@ -3,7 +3,9 @@
 // }
 .app-player #footer {
   position: absolute;
-  bottom: -200px;
+  bottom: -100%;
+  left: 0;
+  right: 0;
   z-index: 3;
 }
 .app-player .fp-overflow {
@@ -35,8 +37,8 @@
     left: 50%;
     transform: translate(-50%, -50%);
     @include mobileMore {
-      width: 400px;
-      height: 400px;
+      width: 500px;
+      height: 500px;
     }
     .circle_box {
       position: absolute;
@@ -57,7 +59,7 @@
   text-align: center;
   z-index: 2;
   color: #fff;
-  font-size: 2.5vw;
+  font-size: 3.5vw;
   pointer-events: none;
   > div {
     position: absolute;
@@ -77,6 +79,11 @@
   .t__dep3 {
   }
   .t__dep4 {
+    em {
+      font-weight: bold;
+
+      color: #0095ff;
+    }
   }
   .circle {
     width: 100%;
@@ -120,9 +127,12 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 2.5vw;
-  z-index: -3000;
+  font-size: 3.5vw;
+  z-index: -3;
   pointer-events: none;
+  @include mobile {
+    font-size: 2rem;
+  }
   .video_item {
     top: 0;
     left: 0;
@@ -160,12 +170,14 @@
     .app_logo {
       position: absolute;
       z-index: 2;
-      top: 35%;
+      top: 30%;
       left: 50%;
       transform: translate(-50%, -50%);
       opacity: 0;
-      pointer-events: visible;
-      cursor: pointer;
+      @include mobile {
+        top: 30%;
+        transform: translate(-50%, -50%) scale(0.7);
+      }
     }
     .app_download {
       position: absolute;
@@ -176,9 +188,15 @@
       text-align: center;
       transform: translate(-50%, -50%);
       opacity: 0;
-      pointer-events: visible;
       img {
         cursor: pointer;
+        // pointer-events: visible; 활성화 되면 스크롤이 스클롤을 방해함
+      }
+      @include mobile {
+        top: 40%;
+        display: flex;
+        gap: 20px;
+        transform: translate(-50%, -50%) scale(0.7);
       }
     }
   }
@@ -194,6 +212,7 @@
     text-align: center;
     em {
       font-weight: 800;
+
       color: #0095ff;
     }
   }
