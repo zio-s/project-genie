@@ -49,14 +49,25 @@ if (bottomTxt) {
   bottomTxt.addEventListener("mouseleave", () => removeActiveClass(bottomTxt));
 }
 
-// menuBtn이 있을 때만 이벤트 추가
+// 메뉴 버튼과 네비게이션 링크들 가져오기
+const navLinks = document.querySelectorAll("#m-gnb .gnb__depth1 a");
+const menu = document.getElementById("m-gnb");
+
+// 메뉴 버튼이 있을 때만 이벤트 추가
 if (menuBtn) {
   menuBtn.addEventListener("click", function () {
     toggleClass(menuBtn, "active");
   });
 }
 
-// toggleClass 함수 정의
+// 네비게이션 링크 클릭 시 메뉴 닫기
+navLinks.forEach((link) => {
+  link.addEventListener("click", function () {
+    menuBtn.classList.remove("active");
+  });
+});
+
+// 클래스 토글 함수 정의
 function toggleClass(element, className) {
   if (element.classList.contains(className)) {
     element.classList.remove(className);
