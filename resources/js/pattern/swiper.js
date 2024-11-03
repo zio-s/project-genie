@@ -44,4 +44,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 페이지 로드 시 초기 오버레이 상태 업데이트
   updateOverlayVisibility();
+
+  swiper.on("touchStart", () => {
+    fullpage_api.setAllowScrolling(false);
+  });
+
+  // Swiper 드래그 종료 시 스크롤 활성화
+  swiper.on("touchEnd", () => {
+    fullpage_api.setAllowScrolling(true);
+  });
 });
