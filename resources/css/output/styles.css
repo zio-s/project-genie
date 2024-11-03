@@ -361,7 +361,7 @@ body {
 }
 @media (max-width: 599px) {
   .cont {
-    padding-top: 20%;
+    padding: 20% 2% 0 2%;
   }
 }
 .cont.cont-news {
@@ -1345,7 +1345,7 @@ body {
   #footer {
     height: 330px;
     display: block;
-    padding: 30px 20px 0 20px;
+    padding: 30px 20px 32px 20px;
   }
   #footer .f_logo {
     margin-bottom: 30px;

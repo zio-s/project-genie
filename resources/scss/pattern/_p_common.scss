@@ -46,7 +46,7 @@ body {
   /* overflow: hidden; */
   position: relative;
   @include mobile {
-    padding-top: 20%;
+    padding: 20% 2% 0 2%;
   }
   &.cont-news {
     padding: 0;
