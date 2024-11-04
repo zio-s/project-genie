@@ -190,8 +190,8 @@
       transform: translate(-50%, -50%);
       opacity: 0;
       @include mobile {
-        top: 30%;
-        transform: translate(-50%, -50%) scale(0.7);
+        top: 20%;
+        transform: translate(-50%, -50%) scale(0.5);
       }
     }
     .app_download {
@@ -208,10 +208,12 @@
         // pointer-events: visible; 활성화 되면 스크롤이 스클롤을 방해함
       }
       @include mobile {
-        top: 40%;
+        top: 35%;
         display: flex;
+        align-items: center;
+        justify-content: center;
         gap: 20px;
-        transform: translate(-50%, -50%) scale(0.7);
+        transform: translate(-50%, -50%) scale(0.5);
       }
     }
   }

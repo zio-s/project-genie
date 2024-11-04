@@ -1360,23 +1360,23 @@ body {
   #footer {
     height: 330px;
     display: block;
-    padding: 30px 20px 32px 20px;
+    padding: 30px 20px 0px 20px;
   }
   #footer .f_logo {
-    margin-bottom: 30px;
+    margin-bottom: 15px;
   }
   #footer .f_logo p {
     margin: 0 auto;
   }
   #footer .sns {
     justify-content: center;
-    margin-top: 30px;
+    margin-top: 15px;
   }
   #footer .sns a {
-    font-size: 4rem;
+    font-size: 3rem;
   }
   #footer .sns a:hover::after {
-    font-size: 4.3rem;
+    font-size: 3.3rem;
   }
 }
 
@@ -1780,8 +1780,8 @@ body {
 }
 @media (max-width: 599px) {
   .video_t .video_dim .app_logo {
-    top: 30%;
-    transform: translate(-50%, -50%) scale(0.7);
+    top: 20%;
+    transform: translate(-50%, -50%) scale(0.5);
   }
 }
 .video_t .video_dim .app_download {
@@ -1799,10 +1799,12 @@ body {
 }
 @media (max-width: 599px) {
   .video_t .video_dim .app_download {
-    top: 40%;
+    top: 35%;
     display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 20px;
-    transform: translate(-50%, -50%) scale(0.7);
+    transform: translate(-50%, -50%) scale(0.5);
   }
 }
 .video_t .video_txt {

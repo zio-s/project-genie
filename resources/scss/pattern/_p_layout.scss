@@ -892,20 +892,20 @@
   @include mobile {
     height: 330px;
     display: block;
-    padding: 30px 20px 32px 20px;
+    padding: 30px 20px 0px 20px;
     .f_logo {
-      margin-bottom: 30px;
+      margin-bottom: 15px;
       p {
         margin: 0 auto;
       }
     }
     .sns {
       justify-content: center;
-      margin-top: 30px;
+      margin-top: 15px;
       a {
-        font-size: 4rem;
+        font-size: 3rem;
         &:hover::after {
-          font-size: 4.3rem;
+          font-size: 3.3rem;
         }
       }
     }
