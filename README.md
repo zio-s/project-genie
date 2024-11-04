@@ -25,7 +25,7 @@
 ### 📅 Section 4 - 이벤트 및 앨범 소식
 - 최신 이벤트와 앨범 소식을 한눈에 볼 수 있도록 나열하였습니다.
 
-- <img src="https://github.com/user-attachments/assets/c79f976f-0edd-4dd7-aa72-d02dc912baee">
+- <img src="https://github.com/user-attachments/assets/4614b852-2119-4f9b-a0ed-4c3effbb4f05">
 
 ### 📲 Section 5 - App Player 홍보
 - 편리한 앱 사용을 유도하기 위해 제작된 섹션입니다. GSAP 타임라인을 사용해 스크롤 시 부드럽게 움직이는 애니메이션을 구현했습니다.
