@@ -18,11 +18,18 @@
   color: #fff;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   transition: top 0.3s ease;
   border-bottom: 1px solid #767676;
+  @include mobile {
+    height: 60px;
+  }
   .logo {
     box-sizing: border-box;
     padding: 16px 24px;
+    @include mobile {
+      padding-left: 15px;
+    }
     a {
       width: 90px;
       height: 40px;
@@ -33,7 +40,7 @@
   .menu-btn {
     position: absolute;
     right: 24px;
-    top: 16px;
+    // top: 16px;
     width: 40px;
     height: 40px;
     transition: 0.5s;
@@ -43,6 +50,10 @@
       visibility: visible;
       top: 0px;
       z-index: -1;
+    }
+    @include mobile {
+      // top: 0;
+      right: 15px;
     }
     @include tabletMore {
       display: none;

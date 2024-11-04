@@ -386,12 +386,23 @@ body {
   color: #fff;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   transition: top 0.3s ease;
   border-bottom: 1px solid #767676;
+}
+@media (max-width: 599px) {
+  #header {
+    height: 60px;
+  }
 }
 #header .logo {
   box-sizing: border-box;
   padding: 16px 24px;
+}
+@media (max-width: 599px) {
+  #header .logo {
+    padding-left: 15px;
+  }
 }
 #header .logo a {
   width: 90px;
@@ -402,7 +413,6 @@ body {
 #header .menu-btn {
   position: absolute;
   right: 24px;
-  top: 16px;
   width: 40px;
   height: 40px;
   transition: 0.5s;
@@ -413,6 +423,11 @@ body {
   visibility: visible;
   top: 0px;
   z-index: -1;
+}
+@media (max-width: 599px) {
+  #header .menu-btn {
+    right: 15px;
+  }
 }
 @media (min-width: 1024px) {
   #header .menu-btn {
@@ -1573,6 +1588,7 @@ body {
 }
 .app-player #footer {
   position: absolute;
+  padding-bottom: env(safe-area-inset-bottom, 20px);
   bottom: -100%;
   left: 0;
   right: 0;

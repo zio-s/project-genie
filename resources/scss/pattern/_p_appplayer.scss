@@ -3,6 +3,7 @@
 // }
 .app-player #footer {
   position: absolute;
+  padding-bottom: env(safe-area-inset-bottom, 20px); // 모바일에서의 하단 패딩
   bottom: -100%;
   left: 0;
   right: 0;
