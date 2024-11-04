@@ -59,7 +59,7 @@
   text-align: center;
   z-index: 2;
   color: #fff;
-  font-size: 3.5vw;
+  font-size: 2.5vw;
   pointer-events: none;
   > div {
     position: absolute;
@@ -142,6 +142,7 @@
     opacity: 0;
 
     video {
+      width: 100%;
     }
   }
   .video_dim {
