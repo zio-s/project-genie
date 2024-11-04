@@ -1,4 +1,4 @@
-# 지니 리디자인 프로젝트 ( main (one page)
+# 지니 리디자인 프로젝트 ( main (one page))
 
 ## scss로 변환 완료
 
