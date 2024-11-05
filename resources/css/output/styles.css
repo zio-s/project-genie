@@ -1607,6 +1607,9 @@ body {
 
 .app-player {
   background: #1e1e1e;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
 }
 .app-player .scroll_box {
   width: 100%;
@@ -1773,10 +1776,15 @@ body {
 .video_t .video_dim .app_logo {
   position: absolute;
   z-index: 2;
-  top: 30%;
+  top: 25%;
   left: 50%;
   transform: translate(-50%, -50%);
   opacity: 0;
+}
+@media (min-width: 600px) and (max-width: 1023px) {
+  .video_t .video_dim .app_logo {
+    top: 30%;
+  }
 }
 @media (max-width: 599px) {
   .video_t .video_dim .app_logo {
@@ -1796,6 +1804,11 @@ body {
 }
 .video_t .video_dim .app_download img {
   cursor: pointer;
+}
+@media (min-width: 600px) and (max-width: 1023px) {
+  .video_t .video_dim .app_download {
+    top: 65%;
+  }
 }
 @media (max-width: 599px) {
   .video_t .video_dim .app_download {
