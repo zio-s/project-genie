@@ -16,15 +16,13 @@ document.addEventListener("DOMContentLoaded", () => {
       if (destination.item.classList.contains("sec-album")) {
         startWaveAnimation();
       }
-      // 첫 번째 섹션(intro)을 떠날 때 헤더를 나타냄
-      if (destination.index !== 0) {
+      //  두번째 섹션을 떠날 때 헤더를 나타냄
+      if (destination.index !== 1) {
         gsap.to(header, { top: "0", duration: 0.6 });
       }
       ScrollTrigger.refresh();
     },
-
     afterLoad: (origin, destination, direction) => {
-      const header = document.querySelector("#header");
       if (destination.index === 0) {
         gsap.to(header, { top: "-100px", duration: 0.1 });
       }
@@ -174,8 +172,6 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     });
 
-    // 애니메이션 정의
-    // 애니메이션: 아이템이 중앙에 있을 때 멈추는 효과
     tl.fromTo(
       item,
       { y: 100, scale: 0.5 },
@@ -189,8 +185,8 @@ document.addEventListener("DOMContentLoaded", () => {
       scale: 1.1,
       duration: 1, // 잠시 커지는 느낌 주기
       ease: "linear",
-      repeat: 2, // 반복해서 커졌다 줄어들게 함
-      yoyo: true, // 원래 크기로 돌아가기
+      repeat: 2,
+      yoyo: true,
     });
   });
 
@@ -199,9 +195,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ScrollTrigger로 album 섹션에 진입할 때 애니메이션 작동
   ScrollTrigger.create({
-    trigger: albumS, // sec-album 섹션이 트리거
-    start: "top 100%", // 뷰포트의 80%에 도달할 때 시작
-    end: "bottom bottom", // 섹션이 끝날 때까지 유지
+    trigger: albumS,
+    start: "top 100%",
+    end: "bottom bottom",
     onEnter: () => startWaveAnimation(), // 진입 시 애니메이션 시작
   });
 
@@ -241,42 +237,38 @@ document.addEventListener("DOMContentLoaded", () => {
     .fromTo(
       ".circle_box",
       { scale: 1, opacity: 1, rotation: 0 },
-      { scale: 0, opacity: 0, rotation: 180, duration: 7 }, // duration 증가
+      { scale: 0, opacity: 0, rotation: 180, duration: 7 },
       ">1"
     )
-    .to(".t__dep1", { opacity: 0, scale: 0, duration: 4 }, "<") // 지속 시간 증가
+    .to(".t__dep1", { opacity: 0, scale: 0, duration: 4 }, "<")
     .set(".circle_small", { opacity: 0, scale: 0 }, "<")
-    .to(".circle_small", { opacity: 1, scale: 1, duration: 6 }, ">1") // 딜레이 조정 및 지속 시간 증가
+    .to(".circle_small", { opacity: 1, scale: 1, duration: 6 }, ">1")
     .set(".t__dep2", { opacity: 0, scale: 0 }, "<")
-    .to(".t__dep2", { opacity: 1, scale: 1, duration: 6 }, "<") // 지속 시간 증가
+    .to(".t__dep2", { opacity: 1, scale: 1, duration: 6 }, "<")
     .fromTo(".circle_small .circle img", { rotation: 340 }, { rotation: 360, duration: 4 }, ">1")
-    .to(".item__img", { opacity: 1, duration: 2 }, ">1.5") // 지속 시간 증가
-    .to(".item__img", { opacity: 0, duration: 7 }, ">1.5") // 지속 시간 증가
+    .to(".item__img", { opacity: 1, duration: 2 }, ">1.5")
+    .to(".item__img", { opacity: 0, duration: 7 }, ">1.5")
     .to(".t__dep2", { opacity: 0, scale: 0, duration: 2 }, ">2")
     .fromTo(".circle_small .circle img", { rotation: 360, scale: 1 }, { rotation: 400, scale: 0.7, duration: 7 }, ">")
     .set(".circle_large", { opacity: 0, scale: 0 }, "<")
     .to(".circle_large", { opacity: 1, scale: 1, duration: 4 }, "<")
     .set(".t__dep3", { scale: 0 }, "<")
-    .to(".t__dep3", { opacity: 1, scale: 1, duration: 8 }, "<") // 지속 시간 증가
+    .to(".t__dep3", { opacity: 1, scale: 1, duration: 8 }, "<")
     .to(".t__dep3", { opacity: 0, scale: 0, duration: 4 }, ">3")
-    .to(".circle_large", { scale: 1.5, opacity: 1, rotation: 30, duration: 10 }, ">1") // 지속 시간 증가
-    .to(".circle_small", { scale: 1.27, opacity: 1, rotation: 50, duration: 10 }, "<") // 지속 시간 증가
-    .to(".t__dep4", { opacity: 1, scale: 1, duration: 12 }, "<1") // 지속 시간 증가
-    .fromTo(".video_item", { opacity: 0 }, { opacity: 1, duration: 5 }, ">") // 애니메이션 속도 조정
+    .to(".circle_large", { scale: 1.5, opacity: 1, rotation: 30, duration: 10 }, ">1")
+    .to(".circle_small", { scale: 1.27, opacity: 1, rotation: 50, duration: 10 }, "<")
+    .to(".t__dep4", { opacity: 1, scale: 1, duration: 12 }, "<1")
+    .fromTo(".video_item", { opacity: 0 }, { opacity: 1, duration: 5 }, ">")
     .to(".t__dep4", { opacity: 0, scale: 0, duration: 7 }, ">3")
     .to(".circle_small", { opacity: 0, scale: 0, duration: 20 }, "<")
-    .to(".circle_large", { scale: 0, opacity: 0, rotation: 0, duration: 25 }, "<") // 지속 시간 증가
+    .to(".circle_large", { scale: 0, opacity: 0, rotation: 0, duration: 25 }, "<")
     .to(".video_txt", { opacity: 1, duration: 10 }, "<")
-    // .to(".bg_dim", { opacity: 0.8, scale: 8, duration: 12 }, ">1.5")
     .fromTo(".bg_dim", { opacity: 1, scale: 0, duration: 12 }, { opacity: 0.8, scale: 8, duration: 12 }, ">1.5")
     .set(".app_logo", { y: -50 }, "<")
     .set(".app_download", { y: 50 }, "<")
     .to(".app_logo", { opacity: 1, duration: 8, y: 0 }, ">")
     .to(".app_download", { opacity: 1, duration: 8, y: 0 }, "<")
-
     .to("#footer", { bottom: "0", duration: 10 });
-
-  // .to(".t__dep1", { opacity: 1, scale: 1 });
 
   ScrollTrigger.create({
     animation: tl2,
@@ -290,7 +282,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.addEventListener("resize", () => {
     const introSection = document.querySelector(".intro-sec");
+    const newsSection = document.querySelector(".s-news");
     introSection.style.height = `${window.innerHeight}px`;
+    newsSection.style.height = `${window.innerHeight}px`;
     ScrollTrigger.refresh();
   });
 });
