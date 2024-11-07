@@ -25,7 +25,10 @@ document.addEventListener("DOMContentLoaded", () => {
     afterLoad: (origin, destination, direction) => {
       if (destination.index === 0) {
         gsap.to(header, { top: "-100px", duration: 0.1 });
+      } else if (destination.index === 1) {
+        gsap.to(header, { top: "-100px", duration: 0.1 });
       }
+
       history.replaceState(null, null, " ");
     },
   });

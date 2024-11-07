@@ -20,14 +20,17 @@
   justify-content: space-between;
   align-items: center;
   transition: top 0.3s ease;
-  border-bottom: 1px solid #767676;
+  // border-bottom: 1px solid #767676;
   @include mobile {
     height: 60px;
+    border-bottom: 1px solid #767676;
   }
   .logo {
+    display: none;
     box-sizing: border-box;
     padding: 16px 24px;
     @include mobile {
+      display: block;
       padding-left: 15px;
     }
     a {
@@ -35,6 +38,9 @@
       height: 40px;
       display: block;
       background: url(../../../resources/images/f_logo.png) no-repeat center/contain;
+      @include mobile {
+        width: 75px;
+      }
     }
   }
   .menu-btn {
@@ -55,7 +61,7 @@
       right: 15px;
     }
     @include tabletMore {
-      display: none;
+      // display: none;
     }
     div {
       position: absolute;
@@ -119,9 +125,10 @@
     }
   }
   #gnb {
-    display: flex;
+    // display: flex;
     align-items: center;
     padding-right: 24px;
+    display: none; // header 숨김 디자인적으로 이질감이 느껴져서 없앨 예정
     .gnb__depth1 {
       display: flex;
       align-items: center;
@@ -142,7 +149,7 @@
       }
     }
     @include tabletLess {
-      display: none;
+      // display: none;
     }
   }
   #m-gnb {
@@ -416,7 +423,9 @@
 
 /* sec-01 end */
 /* sec-02 */
-
+.sec-album {
+  overflow: hidden;
+}
 .album-bg {
   top: 0;
   left: 0;
@@ -761,7 +770,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  // justify-content: center;
   @include mobile {
     justify-content: space-evenly;
   }
@@ -769,7 +778,7 @@
 .sound {
   width: 100%;
   height: 30%;
-  margin-bottom: 28px;
+  margin-bottom: 120px;
   background-color: #2d63ad;
   @include mobile {
     margin-bottom: 0;
