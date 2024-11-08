@@ -1,10 +1,3 @@
-// window.addEventListener("load", function () {
-//   // 로딩 스피너를 숨기고 콘텐츠를 표시
-//   setTimeout(function () {
-//     document.querySelector(".loading").style.display = "none";
-//     // document.querySelector("content").style.display = "block";
-//   }, 2000);
-// });
 window.onload = function () {
   setTimeout(() => {
     const loadingSpinner = document.querySelector(".loading");
@@ -51,8 +44,6 @@ if (bottomTxt) {
 
 // 메뉴 버튼과 네비게이션 링크들 가져오기
 const navLinks = document.querySelectorAll("#m-gnb .gnb__depth1 a");
-const menu = document.getElementById("m-gnb");
-
 // 메뉴 버튼이 있을 때만 이벤트 추가
 if (menuBtn) {
   menuBtn.addEventListener("click", function () {
