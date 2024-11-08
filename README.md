@@ -4,7 +4,8 @@
 - SCSS: 스타일의 모듈화와 유지보수를 위해 사용
 - GSAP: 스크롤 기반 애니메이션을 위한 타임라인 및 인터랙티브 효과 구현
 - FullPage: FullPage.js를 사용하여 콘텐츠를 페이지 단위로 자연스럽게 전환하는 애니메이션을 구현했습니다.
-- 그누보드: 커뮤니티 (구현완료), 로그인 (구현예정)
+- 그누보드: 커뮤니티 (구현완료) http://zioge.dothome.co.kr/bbs/board.php?bo_table=comu
+          로그인 (구현예정)
 ---
 
 🎬 Features
