@@ -8,6 +8,24 @@ body {
     sans-serif, Poppins;
 }
 
+.fp-overflow::-webkit-scrollbar {
+  width: 7px; /* 스크롤바의 너비 */
+}
+
+.fp-overflow::-webkit-scrollbar-thumb {
+  // height: 5%; /* 스크롤바의 길이 */
+  background: rgba(0, 0, 0, 0.9); /* 스크롤바의 색상 */
+
+  border-radius: 10px;
+  &:hover {
+    background: rgba(0, 0, 0, 0.2);
+  }
+}
+
+.fp-overflow::-webkit-scrollbar-track {
+  background: rgba(11, 33, 63, 0.1); /*스크롤바 뒷 배경 색상*/
+}
+
 #fullpage .section {
   height: 100vh;
   position: relative;
