@@ -378,6 +378,21 @@ body {
   padding: 0;
 }
 
+/* 모바일 안전영역 적용 */
+@media (max-width: 767px) {
+  .sec-news {
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 20px);
+    padding-left: env(safe-area-inset-left, 0px);
+    padding-right: env(safe-area-inset-right, 0px);
+  }
+  .cont-news {
+    margin-bottom: calc(env(safe-area-inset-bottom, 20px) + 50px); /* 50px는 고정 UI 높이에 따라 조정 */
+  }
+  .news-list {
+    padding-bottom: env(safe-area-inset-bottom, 20px);
+  }
+}
 .wrap {
   position: absolute;
   left: 0;
