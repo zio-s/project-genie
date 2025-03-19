@@ -1245,8 +1245,50 @@ body {
 }
 
 .news-list {
+  touch-action: pan-y;
   width: 100%;
   background: #1e1e1e;
+}
+@media (max-width: 599px) {
+  .news-list {
+    /* 슬라이드 높이 조정으로 스크롤이 자연스럽게 작동하도록 */
+  }
+  .news-list .sec-news {
+    height: auto;
+    min-height: 100vh;
+  }
+  .news-list .swiper-container,
+  .news-list .newsSwiper {
+    overflow: visible;
+    touch-action: pan-x; /* 가로 스와이프만 캡처 */
+  }
+  .news-list .news-list ul li {
+    height: auto;
+    max-height: 300px; /* 적절한 높이로 조정 */
+  }
+  .news-list .news-list ul li img {
+    height: 100%;
+    max-height: 300px;
+  }
+}
+
+/* PC 환경에서 스와이퍼 동작 개선 */
+@media (min-width: 768px) {
+  .newsSwiper {
+    cursor: grab; /* 드래그 가능함을 표시 */
+  }
+  .newsSwiper:active {
+    cursor: grabbing; /* 드래그 중임을 표시 */
+  }
+}
+/* 모바일 환경에서 터치 동작 개선 */
+@media (max-width: 767px) {
+  .newsSwiper {
+    touch-action: pan-x; /* 가로 스와이프 허용 */
+  }
+  .sec-news {
+    touch-action: pan-y; /* 섹션 전체에서는 세로 스크롤 허용 */
+  }
 }
 .news-list ul li {
   height: 400px;
@@ -1540,52 +1582,52 @@ body {
 }
 
 .music .bar:nth-child(1) {
-  background: #007acc; /* 어두운 블루 */
+  background: #007acc;
   animation-delay: 1s;
 }
 
 .music .bar:nth-child(2) {
-  background: #008bde; /* 약간 더 밝은 블루 */
+  background: #008bde;
   animation-delay: 0.8s;
 }
 
 .music .bar:nth-child(3) {
-  background: #0095ff; /* 기준 색상 */
+  background: #0095ff;
   animation-delay: 0.6s;
 }
 
 .music .bar:nth-child(4) {
-  background: #00a3ff; /* 기준 색보다 밝은 블루 */
+  background: #00a3ff;
   animation-delay: 0.4s;
 }
 
 .music .bar:nth-child(5) {
-  background: #33b5ff; /* 밝은 블루 */
+  background: #33b5ff;
   animation-delay: 0.2s;
 }
 
 .music .bar:nth-child(6) {
-  background: #33b5ff; /* 밝은 블루 */
+  background: #33b5ff;
   animation-delay: 0.2s;
 }
 
 .music .bar:nth-child(7) {
-  background: #00a3ff; /* 기준 색보다 밝은 블루 */
+  background: #00a3ff;
   animation-delay: 0.4s;
 }
 
 .music .bar:nth-child(8) {
-  background: #0095ff; /* 기준 색상 */
+  background: #0095ff;
   animation-delay: 0.6s;
 }
 
 .music .bar:nth-child(9) {
-  background: #008bde; /* 약간 더 밝은 블루 */
+  background: #008bde;
   animation-delay: 0.8s;
 }
 
 .music .bar:nth-child(10) {
-  background: #007acc; /* 어두운 블루 */
+  background: #007acc;
   animation-delay: 1s;
 }
 

@@ -78,7 +78,7 @@
       opacity: 0;
     }
     &::after {
-      content: "";
+      content: '';
       width: 3px;
       height: 30px;
       background: #fff;
@@ -89,7 +89,7 @@
       transition: 0.5s;
     }
     &::before {
-      content: "";
+      content: '';
       width: 3px;
       height: 30px;
       background: #fff;
@@ -101,7 +101,7 @@
     }
     &.active {
       &::after {
-        content: "";
+        content: '';
         width: 2px;
         height: 40px;
         background: #fff;
@@ -113,7 +113,7 @@
     }
     &.active {
       &::before {
-        content: "";
+        content: '';
         width: 2px;
         height: 40px;
         background: #fff;
@@ -301,7 +301,7 @@
 }
 .inner-txt {
   height: 100%;
-  font-family: "Pretendard";
+  font-family: 'Pretendard';
   font-size: 8rem;
   transform: scale(1);
   color: #fff;
@@ -441,7 +441,7 @@
   /* z-index: -1; */
 }
 .album-bg::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -612,7 +612,7 @@
     }
     .good__data {
       &::before {
-        content: "";
+        content: '';
         display: block;
         width: 40px;
         height: 40px;
@@ -624,7 +624,7 @@
     }
     .good__up {
       &::before {
-        content: "";
+        content: '';
         display: block;
         width: 40px;
         height: 40px;
@@ -657,7 +657,7 @@
           gap: 10px;
         }
         &::before {
-          content: "";
+          content: '';
           display: block;
           width: 40px;
           height: 40px;
@@ -677,7 +677,7 @@
           display: none;
         }
         &::before {
-          content: "";
+          content: '';
           display: block;
           width: 40px;
           height: 40px;
@@ -793,12 +793,54 @@
 }
 
 .news-list {
+  touch-action: pan-y;
   width: 100%;
   background: #1e1e1e;
   @include mobile {
+    .sec-news {
+      height: auto;
+      min-height: 100vh;
+    }
+
+    .swiper-container,
+    .newsSwiper {
+      overflow: visible;
+      touch-action: pan-x; /* 가로 스와이프만 캡처 */
+    }
+
+    /* 슬라이드 높이 조정으로 스크롤이 자연스럽게 작동하도록 */
+    .news-list ul li {
+      height: auto;
+      max-height: 300px; /* 적절한 높이로 조정 */
+    }
+
+    .news-list ul li img {
+      height: 100%;
+      max-height: 300px;
+    }
+  }
+}
+/* PC 환경에서 스와이퍼 동작 개선 */
+@media (min-width: 768px) {
+  .newsSwiper {
+    cursor: grab; /* 드래그 가능함을 표시 */
+  }
+
+  .newsSwiper:active {
+    cursor: grabbing; /* 드래그 중임을 표시 */
   }
 }
 
+/* 모바일 환경에서 터치 동작 개선 */
+@media (max-width: 767px) {
+  .newsSwiper {
+    touch-action: pan-x; /* 가로 스와이프 허용 */
+  }
+
+  .sec-news {
+    touch-action: pan-y; /* 섹션 전체에서는 세로 스크롤 허용 */
+  }
+}
 .news-list ul li {
   height: 400px;
   border-radius: 10px;
@@ -822,7 +864,7 @@
   display: block;
 }
 .news-list ul li a::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 100%;
   left: 0;
@@ -855,7 +897,7 @@
   z-index: 1;
 }
 .news-list .list__txtbox::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -880,9 +922,9 @@
   position: relative;
 }
 .list__goto::after {
-  content: "\f105";
+  content: '\f105';
   margin-left: 10px;
-  font-family: "Line Awesome Free";
+  font-family: 'Line Awesome Free';
   font-weight: 900;
 }
 
@@ -938,7 +980,7 @@
   gap: 20px;
 }
 .sns a {
-  font-family: "Line Awesome Brands";
+  font-family: 'Line Awesome Brands';
   font-weight: 900;
   display: block;
   color: #fff;
@@ -950,15 +992,15 @@
 }
 .tw::after {
   display: block;
-  content: "\f099";
+  content: '\f099';
 }
 .ig::after {
   display: block;
-  content: "\f16d";
+  content: '\f16d';
 }
 .yt::after {
   display: block;
-  content: "\f167";
+  content: '\f167';
 }
 
 .sns a:hover::after {
